@@ -1,4 +1,4 @@
-import { SidebarProvider, Sidebar, SidebarInset, SidebarTrigger } from '@/components/ui/sidebar';
+import { SidebarProvider } from '@/components/ui/sidebar';
 import { COURSE_CONTENT, type Lesson, type LessonContentBlock } from '@/lib/content';
 import AppSidebar from '@/components/layout/Sidebar';
 import Header from '@/components/layout/Header';
@@ -11,8 +11,6 @@ import Quiz from '@/components/lesson/Quiz';
 import LessonCompletion from '@/components/lesson/LessonCompletion';
 import RelatedResources from '@/components/lesson/RelatedResources';
 import { Separator } from '@/components/ui/separator';
-import { Button } from '@/components/ui/button';
-import { PanelLeft } from 'lucide-react';
 
 function renderContentBlock(block: LessonContentBlock, index: number) {
   switch (block.type) {
@@ -50,51 +48,49 @@ export default function Home() {
 
   return (
     <SidebarProvider>
-      <div className="flex min-h-screen">
-        <AppSidebar />
-        <div className="flex flex-col w-full">
-          <Header />
-          <div className="flex-1 lg:grid lg:grid-cols-[1fr_240px] lg:gap-8">
-            <main className="py-6 px-4 md:px-6 lg:px-8">
-              <div className="prose prose-neutral dark:prose-invert max-w-none">
-                <h1 className="font-headline text-4xl md:text-5xl font-extrabold tracking-tight mb-4">
-                  {lesson.title}
-                </h1>
-                <p className="text-lg text-muted-foreground mb-8">
-                  {lesson.summary}
-                </p>
+      <AppSidebar />
+      <div className="flex flex-col w-full">
+        <Header />
+        <div className="flex-1 lg:grid lg:grid-cols-[1fr_240px] lg:gap-8">
+          <main className="py-6 px-4 md:px-6 lg:px-8">
+            <div className="prose prose-neutral dark:prose-invert max-w-none">
+              <h1 className="font-headline text-4xl md:text-5xl font-extrabold tracking-tight mb-4">
+                {lesson.title}
+              </h1>
+              <p className="text-lg text-muted-foreground mb-8">
+                {lesson.summary}
+              </p>
 
-                <VideoPlayer videoId={lesson.videoId} />
+              <VideoPlayer videoId={lesson.videoId} />
 
-                {lesson.content.map(renderContentBlock)}
-                
-                <Separator className="my-12" />
+              {lesson.content.map(renderContentBlock)}
+              
+              <Separator className="my-12" />
 
-                <PracticeTasks
-                  lessonId={lesson.id}
-                  lessonTitle={lesson.title}
-                  lessonContent={lesson.content.map(b => b.type === 'p' ? b.text : '').join('\n')}
-                  initialTasks={lesson.practiceTasks}
-                />
-                
-                <Separator className="my-12" />
+              <PracticeTasks
+                lessonId={lesson.id}
+                lessonTitle={lesson.title}
+                lessonContent={lesson.content.map(b => b.type === 'p' ? b.text : '').join('\n')}
+                initialTasks={lesson.practiceTasks}
+              />
+              
+              <Separator className="my-12" />
 
-                <Quiz lessonId={lesson.id} questions={lesson.quiz} />
+              <Quiz lessonId={lesson.id} questions={lesson.quiz} />
 
-                <LessonCompletion lessonId={lesson.id} />
-                
-                <Separator className="my-12" />
-                
-                <RelatedResources
-                  nextLesson={lesson.relatedResources.nextLesson}
-                  docs={lesson.relatedResources.docs}
-                />
-              </div>
-            </main>
-            <aside className="hidden lg:block sticky top-16 h-[calc(100vh-4rem)] overflow-y-auto py-6 pr-4">
-              <TableOfContents headings={headings} />
-            </aside>
-          </div>
+              <LessonCompletion lessonId={lesson.id} />
+              
+              <Separator className="my-12" />
+              
+              <RelatedResources
+                nextLesson={lesson.relatedResources.nextLesson}
+                docs={lesson.relatedResources.docs}
+              />
+            </div>
+          </main>
+          <aside className="hidden lg:block sticky top-16 h-[calc(100vh-4rem)] overflow-y-auto py-6 pr-4">
+            <TableOfContents headings={headings} />
+          </aside>
         </div>
       </div>
     </SidebarProvider>

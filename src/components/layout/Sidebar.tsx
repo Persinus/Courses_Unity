@@ -12,9 +12,9 @@ import {
   SidebarGroupLabel,
   useSidebar,
 } from '@/components/ui/sidebar';
-import { Collapsible, CollapsibleContent, CollapsibleTrigger } from '@/components/ui/collapsible';
+import { Collapsible, CollapsibleContent } from '@/components/ui/collapsible';
 import { COURSE_CONTENT } from '@/lib/content';
-import { CheckCircle2, ChevronDown } from 'lucide-react';
+import { CheckCircle2, ChevronDown, BookOpen, Code, Dot } from 'lucide-react';
 import { useLocalStorage } from '@/hooks/use-local-storage';
 import { cn } from '@/lib/utils';
 import Link from 'next/link';
@@ -45,6 +45,10 @@ function Logo() {
   );
 }
 
+const moduleIcons: { [key: string]: React.ElementType } = {
+  'module-1': BookOpen,
+  'module-2': Code,
+};
 
 export default function AppSidebar() {
   const [completedLessons] = useLocalStorage<string[]>('completedLessons', []);
@@ -54,60 +58,67 @@ export default function AppSidebar() {
   const activeLessonId = 'intro-to-unity-editor';
 
   return (
-    <Sidebar collapsible="icon">
+    <Sidebar>
       <SidebarHeader>
         <Logo />
       </SidebarHeader>
       <SidebarContent>
         <SidebarMenu>
-          {COURSE_CONTENT.map((module) => (
-            <SidebarGroup key={module.id}>
-              <SidebarMenuButton
-                asChild
-                className="justify-between"
-                onClick={(e) => {
-                  e.preventDefault();
-                  setOpenModules((prev) =>
-                    openModules.includes(module.id)
-                      ? prev.filter((id) => id !== module.id)
-                      : [...prev, module.id]
-                  );
-                }}
-              >
-                <div>
-                  <SidebarGroupLabel>{module.title}</SidebarGroupLabel>
-                  <ChevronDown
-                    className={cn(
-                      'h-4 w-4 transition-transform',
-                      openModules.includes(module.id) && 'rotate-180'
-                    )}
-                  />
-                </div>
-              </SidebarMenuButton>
-              <Collapsible
-                open={openModules.includes(module.id)}
-              >
-                <CollapsibleContent>
-                  <SidebarMenu className="py-1">
-                    {module.lessons.map((lesson) => (
-                      <SidebarMenuItem key={lesson.id}>
-                        <SidebarMenuButton
-                          isActive={lesson.id === activeLessonId}
-                          className="flex justify-between items-center w-full"
-                          tooltip={lesson.title}
-                        >
-                          <span>{lesson.title}</span>
-                          {completedLessons.includes(lesson.id) && (
-                            <CheckCircle2 className="h-4 w-4 text-accent" />
-                          )}
-                        </SidebarMenuButton>
-                      </SidebarMenuItem>
-                    ))}
-                  </SidebarMenu>
-                </CollapsibleContent>
-              </Collapsible>
-            </SidebarGroup>
-          ))}
+          {COURSE_CONTENT.map((module) => {
+            const Icon = moduleIcons[module.id] || Dot;
+            return (
+              <SidebarGroup key={module.id}>
+                <SidebarMenuButton
+                  asChild
+                  className="justify-between"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    setOpenModules((prev) =>
+                      openModules.includes(module.id)
+                        ? prev.filter((id) => id !== module.id)
+                        : [...prev, module.id]
+                    );
+                  }}
+                  tooltip={module.title}
+                >
+                  <div>
+                    <div className="flex items-center gap-2">
+                      <Icon />
+                      <SidebarGroupLabel>{module.title}</SidebarGroupLabel>
+                    </div>
+                    <ChevronDown
+                      className={cn(
+                        'h-4 w-4 transition-transform',
+                        openModules.includes(module.id) && 'rotate-180'
+                      )}
+                    />
+                  </div>
+                </SidebarMenuButton>
+                <Collapsible
+                  open={openModules.includes(module.id)}
+                >
+                  <CollapsibleContent>
+                    <SidebarMenu className="py-1">
+                      {module.lessons.map((lesson) => (
+                        <SidebarMenuItem key={lesson.id}>
+                          <SidebarMenuButton
+                            isActive={lesson.id === activeLessonId}
+                            className="flex justify-between items-center w-full"
+                            tooltip={lesson.title}
+                          >
+                            <span>{lesson.title}</span>
+                            {completedLessons.includes(lesson.id) && (
+                              <CheckCircle2 className="h-4 w-4 text-accent" />
+                            )}
+                          </SidebarMenuButton>
+                        </SidebarMenuItem>
+                      ))}
+                    </SidebarMenu>
+                  </CollapsibleContent>
+                </Collapsible>
+              </SidebarGroup>
+            )
+          })}
         </SidebarMenu>
       </SidebarContent>
     </Sidebar>
