@@ -16,8 +16,7 @@ import { Separator } from '@/components/ui/separator';
 
 export default function LessonPage({ params }: { params: { lessonId: string } }) {
   const lessonId = params.lessonId;
-  const lesson = COURSE_STRUCTURE.flatMap(level => level.categories)
-    .flatMap(category => category.modules)
+  const lesson = COURSE_STRUCTURE.flatMap(category => category.modules)
     .flatMap(module => module.lessons)
     .find(l => l.id === lessonId);
 
@@ -106,8 +105,7 @@ export default function LessonPage({ params }: { params: { lessonId: string } })
 }
 
 export async function generateStaticParams() {
-  const lessonIds = COURSE_STRUCTURE.flatMap(level => level.categories)
-    .flatMap(category => category.modules)
+  const lessonIds = COURSE_STRUCTURE.flatMap(category => category.modules)
     .flatMap(module => module.lessons)
     .map(lesson => ({
       lessonId: lesson.id,

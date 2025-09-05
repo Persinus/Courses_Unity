@@ -39,18 +39,8 @@ export interface SkillCategory {
     modules: CourseModule[];
 }
 
-export interface SkillLevel {
-    id: string;
-    title: string;
-    categories: SkillCategory[];
-}
-
-export const COURSE_STRUCTURE: SkillLevel[] = [
-  {
-    id: 'intern',
-    title: 'Intern Level',
-    categories: [
-      {
+export const COURSE_STRUCTURE: SkillCategory[] = [
+    {
         id: 'basic-programming',
         title: 'Lập trình cơ bản',
         modules: [
@@ -242,34 +232,20 @@ public class PlayerController : MonoBehaviour
         id: 'data-structures',
         title: 'Cấu trúc dữ liệu',
         modules: []
+      },
+      {
+        id: 'design-patterns',
+        title: 'Design Pattern',
+        modules: []
+      },
+      {
+        id: 'backend-game',
+        title: 'Back End Game',
+        modules: []
+      },
+      {
+        id: 'advanced-programming',
+        title: 'Lập trình nâng cao',
+        modules: []
       }
-    ]
-  },
-  {
-    id: 'fresher',
-    title: 'Fresher Level',
-    categories: [
-        {
-            id: 'design-patterns',
-            title: 'Design Pattern',
-            modules: []
-        },
-        {
-            id: 'backend-game',
-            title: 'Back End Game',
-            modules: []
-        }
-    ]
-  },
-  {
-    id: 'junior',
-    title: 'Junior Level',
-    categories: [
-        {
-            id: 'advanced-programming',
-            title: 'Lập trình nâng cao',
-            modules: []
-        }
-    ]
-  }
 ];
