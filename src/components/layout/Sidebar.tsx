@@ -8,11 +8,9 @@ import {
   SidebarMenu,
   SidebarMenuItem,
   SidebarMenuButton,
-  SidebarGroup,
-  SidebarGroupLabel,
   useSidebar,
 } from '@/components/ui/sidebar';
-import { Collapsible, CollapsibleContent } from '@/components/ui/collapsible';
+import { Collapsible, CollapsibleContent, CollapsibleTrigger } from '@/components/ui/collapsible';
 import { COURSE_CONTENT } from '@/lib/content';
 import { CheckCircle2, ChevronDown, BookOpen, Code, Dot } from 'lucide-react';
 import { useLocalStorage } from '@/hooks/use-local-storage';
@@ -24,23 +22,25 @@ function Logo() {
   return (
     <Link
       href="#"
-      className="flex items-center gap-2 font-bold text-xl font-headline"
+      className="flex items-center gap-2.5 font-bold text-lg font-headline"
     >
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="2"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        className="h-6 w-6 text-primary"
-      >
-        <path d="M21.5 12a9.5 9.5 0 1 1-19 0 9.5 9.5 0 0 1 19 0Z" />
-        <path d="M12 2.5v19" />
-        <path d="M2.5 12h19" />
-      </svg>
-      {state === 'expanded' && <span>Unity Codex</span>}
+      <div className="flex items-center justify-center w-8 h-8 bg-primary rounded-lg text-primary-foreground">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2.5"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          className="h-5 w-5"
+        >
+          <path d="M21.5 12a9.5 9.5 0 1 1-19 0 9.5 9.5 0 0 1 19 0Z" />
+          <path d="M12 2.5v19" />
+          <path d="M2.5 12h19" />
+        </svg>
+      </div>
+      <span className={cn(state === 'collapsed' && 'hidden')}>Unity Codex</span>
     </Link>
   );
 }
@@ -53,6 +53,7 @@ const moduleIcons: { [key: string]: React.ElementType } = {
 export default function AppSidebar() {
   const [completedLessons] = useLocalStorage<string[]>('completedLessons', []);
   const [openModules, setOpenModules] = useState<string[]>(['module-1']);
+  const { state } = useSidebar();
 
   // In a real app, this would come from the URL
   const activeLessonId = 'intro-to-unity-editor';
@@ -67,56 +68,60 @@ export default function AppSidebar() {
           {COURSE_CONTENT.map((module) => {
             const Icon = moduleIcons[module.id] || Dot;
             return (
-              <SidebarGroup key={module.id}>
-                <SidebarMenuButton
-                  asChild
-                  className="justify-between"
-                  onClick={(e) => {
-                    e.preventDefault();
-                    setOpenModules((prev) =>
-                      openModules.includes(module.id)
-                        ? prev.filter((id) => id !== module.id)
-                        : [...prev, module.id]
-                    );
-                  }}
-                  tooltip={module.title}
-                >
-                  <div>
-                    <div className="flex items-center gap-2">
-                      <Icon />
-                      <SidebarGroupLabel>{module.title}</SidebarGroupLabel>
-                    </div>
+              <Collapsible
+                key={module.id}
+                open={openModules.includes(module.id)}
+                onOpenChange={(isOpen) => {
+                  setOpenModules((prev) =>
+                    isOpen
+                      ? [...prev, module.id]
+                      : prev.filter((id) => id !== module.id)
+                  );
+                }}
+                className="w-full"
+              >
+                <CollapsibleTrigger asChild>
+                  <SidebarMenuButton
+                    variant="ghost"
+                    className="w-full justify-start gap-2 px-3"
+                    tooltip={module.title}
+                  >
+                    <Icon className="h-5 w-5" />
+                    <span className={cn('flex-1 text-left', state === 'collapsed' && 'hidden')}>
+                      {module.title}
+                    </span>
                     <ChevronDown
                       className={cn(
                         'h-4 w-4 transition-transform',
-                        openModules.includes(module.id) && 'rotate-180'
+                        openModules.includes(module.id) && 'rotate-180',
+                        state === 'collapsed' && 'hidden'
                       )}
                     />
-                  </div>
-                </SidebarMenuButton>
-                <Collapsible
-                  open={openModules.includes(module.id)}
-                >
-                  <CollapsibleContent>
-                    <SidebarMenu className="py-1">
-                      {module.lessons.map((lesson) => (
-                        <SidebarMenuItem key={lesson.id}>
-                          <SidebarMenuButton
-                            isActive={lesson.id === activeLessonId}
-                            className="flex justify-between items-center w-full"
-                            tooltip={lesson.title}
-                          >
+                  </SidebarMenuButton>
+                </CollapsibleTrigger>
+                <CollapsibleContent>
+                  <SidebarMenu className={cn("pl-7", state === 'collapsed' && 'hidden')}>
+                    {module.lessons.map((lesson) => (
+                      <SidebarMenuItem key={lesson.id} className="my-1">
+                        <SidebarMenuButton
+                          size="sm"
+                          isActive={lesson.id === activeLessonId}
+                          className="flex justify-between items-center w-full"
+                          tooltip={lesson.title}
+                          asChild
+                        >
+                          <Link href="#">
                             <span>{lesson.title}</span>
                             {completedLessons.includes(lesson.id) && (
                               <CheckCircle2 className="h-4 w-4 text-accent" />
                             )}
-                          </SidebarMenuButton>
-                        </SidebarMenuItem>
-                      ))}
-                    </SidebarMenu>
-                  </CollapsibleContent>
-                </Collapsible>
-              </SidebarGroup>
+                          </Link>
+                        </SidebarMenuButton>
+                      </SidebarMenuItem>
+                    ))}
+                  </SidebarMenu>
+                </CollapsibleContent>
+              </Collapsible>
             )
           })}
         </SidebarMenu>
