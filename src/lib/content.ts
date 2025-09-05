@@ -3,6 +3,7 @@ export interface Lesson {
   id: string;
   title: string;
   summary: string;
+  href: string; // Added href for direct linking
   videoId: string;
   content: LessonContentBlock[];
   practiceTasks: string[];
@@ -36,6 +37,7 @@ export interface CourseModule {
 export interface SkillCategory {
     id: string;
     title: string;
+    description: string;
     modules: CourseModule[];
 }
 
@@ -43,6 +45,7 @@ export const COURSE_STRUCTURE: SkillCategory[] = [
     {
         id: 'basic-programming',
         title: 'Lập trình cơ bản',
+        description: 'Nắm vững các khái niệm cốt lõi của Unity và C# để xây dựng nền tảng vững chắc cho việc phát triển game.',
         modules: [
           {
             id: 'module-1',
@@ -51,8 +54,8 @@ export const COURSE_STRUCTURE: SkillCategory[] = [
               {
                 id: 'intro-to-unity-editor',
                 title: 'Introduction to the Unity Editor',
-                summary:
-                  'Learn to navigate the Unity Editor, understand its core windows, and start creating your first project. This lesson is your first step into the world of game development with Unity.',
+                summary: 'Làm quen với các cửa sổ và công cụ cốt lõi của Unity Editor.',
+                href: '/lessons/intro-to-unity-editor',
                 videoId: 'd111o4gq-y8',
                 content: [
                   {
@@ -192,7 +195,8 @@ public class PlayerController : MonoBehaviour
               {
                 id: 'gameobjects-and-components',
                 title: 'GameObjects and Components',
-                summary: 'Understand the fundamental building blocks of Unity: GameObjects and Components. Learn how they work together to create everything in your game.',
+                summary: 'Hiểu rõ về các khối xây dựng cơ bản của Unity.',
+                href: '/lessons/gameobjects-and-components',
                 videoId: 'rE9m88I8z34',
                 content: [],
                 practiceTasks: [],
@@ -214,7 +218,8 @@ public class PlayerController : MonoBehaviour
                {
                 id: 'variables-and-data-types',
                 title: 'Variables and Data Types',
-                summary: 'Dive into C# scripting by learning about variables and the different data types you can use to store information like health, score, and player names.',
+                summary: 'Tìm hiểu về biến và các kiểu dữ liệu để lưu trữ thông tin trong game.',
+                href: '/lessons/variables-and-data-types',
                 videoId: 'N_n_zgwGz3o',
                 content: [],
                 practiceTasks: [],
@@ -231,21 +236,25 @@ public class PlayerController : MonoBehaviour
       {
         id: 'data-structures',
         title: 'Cấu trúc dữ liệu',
+        description: 'Sử dụng các cấu trúc dữ liệu hiệu quả để quản lý thông tin game phức tạp.',
         modules: []
       },
       {
         id: 'design-patterns',
         title: 'Design Pattern',
+        description: 'Áp dụng các mẫu thiết kế phổ biến để viết mã sạch, dễ bảo trì và mở rộng.',
         modules: []
       },
       {
         id: 'backend-game',
         title: 'Back End Game',
+        description: 'Xây dựng các tính năng phía máy chủ như quản lý người chơi, dữ liệu và nhiều người chơi.',
         modules: []
       },
       {
         id: 'advanced-programming',
         title: 'Lập trình nâng cao',
+        description: 'Khám phá các chủ đề nâng cao như tối ưu hóa, lập trình shader và AI cho game.',
         modules: []
       }
 ];
