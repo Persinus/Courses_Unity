@@ -1,4 +1,4 @@
-import { SidebarProvider } from '@/components/ui/sidebar';
+import { SidebarProvider, SidebarInset } from '@/components/ui/sidebar';
 import { COURSE_CONTENT, type Lesson, type LessonContentBlock } from '@/lib/content';
 import AppSidebar from '@/components/layout/Sidebar';
 import Header from '@/components/layout/Header';
@@ -49,7 +49,7 @@ export default function Home() {
   return (
     <SidebarProvider>
       <AppSidebar />
-      <div className="flex flex-col w-full">
+      <SidebarInset>
         <Header />
         <div className="flex-1 lg:grid lg:grid-cols-[1fr_240px] lg:gap-8">
           <main className="py-6 px-4 md:px-6 lg:px-8">
@@ -92,7 +92,7 @@ export default function Home() {
             <TableOfContents headings={headings} />
           </aside>
         </div>
-      </div>
+      </SidebarInset>
     </SidebarProvider>
   );
 }
