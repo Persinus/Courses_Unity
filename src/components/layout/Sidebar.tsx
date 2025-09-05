@@ -1,3 +1,4 @@
+
 "use client";
 
 import React, { useState } from 'react';
@@ -10,10 +11,12 @@ import {
   SidebarMenuButton,
   useSidebar,
   SidebarFooter,
+  SidebarGroup,
+  SidebarGroupLabel,
 } from '@/components/ui/sidebar';
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from '@/components/ui/collapsible';
-import { COURSE_CONTENT } from '@/lib/content';
-import { CheckCircle2, ChevronDown, BookOpen, Code, Dot, Library, LayoutDashboard, Settings, LifeBuoy } from 'lucide-react';
+import { COURSE_STRUCTURE } from '@/lib/content';
+import { CheckCircle2, ChevronDown, BookOpen, Code, Dot, Library, LayoutDashboard, Settings, LifeBuoy, Folder, File, GraduationCap } from 'lucide-react';
 import { useLocalStorage } from '@/hooks/use-local-storage';
 import { cn } from '@/lib/utils';
 import Link from 'next/link';
@@ -47,24 +50,32 @@ function Logo() {
   );
 }
 
-const moduleIcons: { [key: string]: React.ElementType } = {
-  'module-1': BookOpen,
-  'module-2': Code,
+const categoryIcons: { [key: string]: React.ElementType } = {
+  'basic-programming': Code,
+  'data-structures': Folder,
+  'design-patterns-fresher': File,
+  'backend-fresher': Settings,
+  'advanced-programming': GraduationCap,
 };
 
 export default function AppSidebar() {
   const [completedLessons] = useLocalStorage<string[]>('completedLessons', []);
-  const [openModules, setOpenModules] = useState<string[]>(['module-1']);
+  const [openSections, setOpenSections] = useState<string[]>(['intern', 'basic-programming', 'module-1']);
   const { state } = useSidebar();
   const pathname = usePathname();
 
-  // In a real app, this would come from the URL
   const activeLessonId = 'intro-to-unity-editor';
 
   const generalMenuItems = [
     { href: '/dashboard', icon: LayoutDashboard, label: 'Dashboard' },
     { href: '/assets', icon: Library, label: 'Asset Library' },
   ];
+
+  const handleOpenChange = (id: string, isOpen: boolean) => {
+    setOpenSections((prev) =>
+      isOpen ? [...prev, id] : prev.filter((openId) => openId !== id)
+    );
+  };
 
   return (
     <Sidebar>
@@ -90,69 +101,79 @@ export default function AppSidebar() {
         </SidebarMenu>
         
         <div className="mt-4 pt-4 border-t border-sidebar-border">
-          <p className={cn("px-4 text-xs font-semibold text-sidebar-foreground/70 mb-2", state === 'collapsed' && 'hidden')}>
-            Course Content
-          </p>
           <SidebarMenu>
-            {COURSE_CONTENT.map((module) => {
-              const Icon = moduleIcons[module.id] || Dot;
-              return (
-                <Collapsible
-                  key={module.id}
-                  open={openModules.includes(module.id)}
-                  onOpenChange={(isOpen) => {
-                    setOpenModules((prev) =>
-                      isOpen
-                        ? [...prev, module.id]
-                        : prev.filter((id) => id !== module.id)
-                    );
-                  }}
-                  className="w-full"
-                >
-                  <CollapsibleTrigger asChild>
-                    <SidebarMenuButton
-                      variant="ghost"
-                      className="w-full justify-start gap-2 px-3"
-                      tooltip={module.title}
-                    >
-                      <Icon className="h-5 w-5" />
-                      <span className={cn('flex-1 text-left', state === 'collapsed' && 'hidden')}>
-                        {module.title}
-                      </span>
-                      <ChevronDown
+            {COURSE_STRUCTURE.map((level) => (
+              <Collapsible
+                key={level.id}
+                open={openSections.includes(level.id)}
+                onOpenChange={(isOpen) => handleOpenChange(level.id, isOpen)}
+                className="w-full"
+              >
+                <CollapsibleTrigger className="w-full">
+                  <SidebarGroupLabel className={cn('font-semibold text-base', state === 'expanded' && 'px-0')}>
+                     {level.title}
+                     <ChevronDown
                         className={cn(
-                          'h-4 w-4 transition-transform',
-                          openModules.includes(module.id) && 'rotate-180',
-                          state === 'collapsed' && 'hidden'
+                          'ml-auto h-4 w-4 transition-transform',
+                          openSections.includes(level.id) && 'rotate-180',
+                           state === 'collapsed' && 'hidden'
                         )}
                       />
-                    </SidebarMenuButton>
-                  </CollapsibleTrigger>
-                  <CollapsibleContent>
-                    <SidebarMenu className={cn("pl-7", state === 'collapsed' && 'hidden')}>
-                      {module.lessons.map((lesson) => (
-                        <SidebarMenuItem key={lesson.id} className="my-1">
-                          <SidebarMenuButton
-                            size="sm"
-                            isActive={lesson.id === activeLessonId}
-                            className="flex justify-between items-center w-full"
-                            tooltip={lesson.title}
-                            asChild
-                          >
-                            <Link href="#">
-                              <span>{lesson.title}</span>
-                              {completedLessons.includes(lesson.id) && (
-                                <CheckCircle2 className="h-4 w-4 text-accent" />
-                              )}
-                            </Link>
-                          </SidebarMenuButton>
-                        </SidebarMenuItem>
-                      ))}
-                    </SidebarMenu>
-                  </CollapsibleContent>
-                </Collapsible>
-              )
-            })}
+                  </SidebarGroupLabel>
+                </CollapsibleTrigger>
+                <CollapsibleContent className={cn(state === 'collapsed' && 'hidden', 'pl-2')}>
+                  {level.categories.map((category) => (
+                     <Collapsible
+                      key={category.id}
+                      open={openSections.includes(category.id)}
+                      onOpenChange={(isOpen) => handleOpenChange(category.id, isOpen)}
+                      className="w-full"
+                    >
+                      <CollapsibleTrigger asChild>
+                         <SidebarMenuButton variant="ghost" className="w-full justify-start gap-2 px-3" tooltip={category.title}>
+                           {React.createElement(categoryIcons[category.id] || Dot, { className: 'h-5 w-5' })}
+                           <span className={cn('flex-1 text-left', state === 'collapsed' && 'hidden')}>
+                             {category.title}
+                           </span>
+                           <ChevronDown
+                             className={cn(
+                               'h-4 w-4 transition-transform',
+                               openSections.includes(category.id) && 'rotate-180',
+                               state === 'collapsed' && 'hidden'
+                             )}
+                           />
+                         </SidebarMenuButton>
+                      </CollapsibleTrigger>
+                      <CollapsibleContent className={cn(state === 'collapsed' && 'hidden', 'pl-4')}>
+                        {category.modules.map(module => (
+                            <SidebarMenu key={module.id} className="py-1">
+                                <p className="px-3 text-xs font-semibold text-sidebar-foreground/50 mb-1">{module.title}</p>
+                                {module.lessons.map((lesson) => (
+                                    <SidebarMenuItem key={lesson.id} className="my-1">
+                                    <SidebarMenuButton
+                                        size="sm"
+                                        isActive={lesson.id === activeLessonId}
+                                        className="flex justify-between items-center w-full"
+                                        tooltip={lesson.title}
+                                        asChild
+                                    >
+                                        <Link href="#">
+                                        <span>{lesson.title}</span>
+                                        {completedLessons.includes(lesson.id) && (
+                                            <CheckCircle2 className="h-4 w-4 text-accent" />
+                                        )}
+                                        </Link>
+                                    </SidebarMenuButton>
+                                    </SidebarMenuItem>
+                                ))}
+                           </SidebarMenu>
+                        ))}
+                      </CollapsibleContent>
+                    </Collapsible>
+                  ))}
+                </CollapsibleContent>
+              </Collapsible>
+            ))}
           </SidebarMenu>
         </div>
       </SidebarContent>
