@@ -6,6 +6,7 @@ import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { ThemeToggle } from './theme-toggle';
+import Link from 'next/link';
 
 export default function Header() {
   // This is a placeholder for authentication state
@@ -13,7 +14,7 @@ export default function Header() {
   const { toggleSidebar } = useSidebar();
 
   return (
-    <header className="sticky top-0 z-30 flex h-16 items-center gap-4 border-b bg-background/95 backdrop-blur-sm px-4 md:px-6">
+    <header className="sticky top-0 z-10 flex h-16 items-center gap-4 border-b bg-background/95 backdrop-blur-sm px-4 md:px-6">
       <div className="flex items-center gap-2">
         <SidebarTrigger className="md:hidden" />
         <Button variant="ghost" size="icon" className="hidden md:inline-flex" onClick={toggleSidebar}>
@@ -38,9 +39,11 @@ export default function Header() {
             <AvatarFallback>CN</AvatarFallback>
           </Avatar>
         ) : (
-          <Button variant="outline" className="hidden sm:inline-flex">
-            <LogIn className="mr-2 h-4 w-4" />
-            Login
+          <Button asChild variant="outline" className="hidden sm:inline-flex">
+            <Link href="/login">
+              <LogIn className="mr-2 h-4 w-4" />
+              Login
+            </Link>
           </Button>
         )}
       </div>
