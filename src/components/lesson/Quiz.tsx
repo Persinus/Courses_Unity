@@ -1,3 +1,4 @@
+
 "use client";
 
 import { useState, useCallback } from 'react';
@@ -19,23 +20,22 @@ type QuizScores = { [lessonId: string]: number };
 
 export default function Quiz({ lessonId, questions }: QuizProps) {
   const [quizScores, setQuizScores] = useLocalStorage<QuizScores>('quizScores', {});
-  const [selectedAnswers, setSelectedAnswers] = useState<Record<number, number>>({});
+  const [selectedAnswers, setSelectedAnswers] = useState<Record<number, string>>({});
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [score, setScore] = useState<number | null>(quizScores[lessonId] ?? null);
 
   const handleSelectAnswer = useCallback((questionIndex: number, answerIndex: string) => {
     if (isSubmitted) return;
-    const answerAsNumber = parseInt(answerIndex, 10);
     setSelectedAnswers(prev => ({
       ...prev,
-      [questionIndex]: answerAsNumber
+      [questionIndex]: answerIndex,
     }));
   }, [isSubmitted]);
 
   const handleSubmit = () => {
     let currentScore = 0;
     questions.forEach((q, i) => {
-      if (q.correctAnswer === selectedAnswers[i]) {
+      if (q.correctAnswer.toString() === selectedAnswers[i]) {
         currentScore++;
       }
     });
@@ -66,13 +66,13 @@ export default function Quiz({ lessonId, questions }: QuizProps) {
           <div key={qIndex}>
             <p className="font-medium mb-4">{qIndex + 1}. {q.question}</p>
             <RadioGroup
-              value={selectedAnswers[qIndex]?.toString() ?? ''}
+              value={selectedAnswers[qIndex] ?? ''}
               onValueChange={(value) => handleSelectAnswer(qIndex, value)}
               disabled={isSubmitted}
             >
               {q.options.map((option, oIndex) => {
                 const isCorrect = oIndex === q.correctAnswer;
-                const isSelected = oIndex === selectedAnswers[qIndex];
+                const isSelected = oIndex.toString() === selectedAnswers[qIndex];
                 
                 return (
                   <div
@@ -114,3 +114,4 @@ export default function Quiz({ lessonId, questions }: QuizProps) {
     </Card>
   );
 }
+
