@@ -19,16 +19,18 @@ type QuizScores = { [lessonId: string]: number };
 
 export default function Quiz({ lessonId, questions }: QuizProps) {
   const [quizScores, setQuizScores] = useLocalStorage<QuizScores>('quizScores', {});
-  const [selectedAnswers, setSelectedAnswers] = useState<number[]>(Array(questions.length).fill(-1));
+  const [selectedAnswers, setSelectedAnswers] = useState<Record<number, number>>({});
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [score, setScore] = useState<number | null>(quizScores[lessonId] ?? null);
 
-  const handleSelectAnswer = useCallback((questionIndex: number, answerIndex: number) => {
+  const handleSelectAnswer = useCallback((questionIndex: number, answerIndex: string) => {
     if (isSubmitted) return;
-    const newAnswers = [...selectedAnswers];
-    newAnswers[questionIndex] = answerIndex;
-    setSelectedAnswers(newAnswers);
-  }, [isSubmitted, selectedAnswers]);
+    const answerAsNumber = parseInt(answerIndex, 10);
+    setSelectedAnswers(prev => ({
+      ...prev,
+      [questionIndex]: answerAsNumber
+    }));
+  }, [isSubmitted]);
 
   const handleSubmit = () => {
     let currentScore = 0;
@@ -45,9 +47,11 @@ export default function Quiz({ lessonId, questions }: QuizProps) {
   
   const handleRetake = () => {
     setIsSubmitted(false);
-    setSelectedAnswers(Array(questions.length).fill(-1));
+    setSelectedAnswers({});
     setScore(null);
   };
+
+  const areAllQuestionsAnswered = Object.keys(selectedAnswers).length === questions.length;
 
   return (
     <Card>
@@ -62,8 +66,8 @@ export default function Quiz({ lessonId, questions }: QuizProps) {
           <div key={qIndex}>
             <p className="font-medium mb-4">{qIndex + 1}. {q.question}</p>
             <RadioGroup
-              value={selectedAnswers[qIndex].toString()}
-              onValueChange={(value) => handleSelectAnswer(qIndex, parseInt(value))}
+              value={selectedAnswers[qIndex]?.toString() ?? ''}
+              onValueChange={(value) => handleSelectAnswer(qIndex, value)}
               disabled={isSubmitted}
             >
               {q.options.map((option, oIndex) => {
@@ -102,7 +106,7 @@ export default function Quiz({ lessonId, questions }: QuizProps) {
                 <Button onClick={handleRetake} variant="outline">Retake Quiz</Button>
             </div>
         ) : (
-            <Button onClick={handleSubmit} disabled={selectedAnswers.includes(-1)}>
+            <Button onClick={handleSubmit} disabled={!areAllQuestionsAnswered}>
                 Submit Answers
             </Button>
         )}
