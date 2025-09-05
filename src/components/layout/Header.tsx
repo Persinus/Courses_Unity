@@ -10,9 +10,9 @@ export default function Header() {
   const isLoggedIn = false;
 
   return (
-    <header className="sticky top-0 z-10 flex h-16 items-center gap-4 border-b bg-background/80 backdrop-blur-sm px-4 md:px-6">
+    <header className="sticky top-0 z-30 flex h-16 items-center gap-4 border-b bg-background/95 px-4 md:px-6">
       <div className="flex items-center gap-2">
-        <SidebarTrigger />
+        <SidebarTrigger className="md:hidden" />
         <div className="hidden items-center gap-2 md:flex">
            <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -32,8 +32,8 @@ export default function Header() {
         </div>
       </div>
 
-      <div className="flex flex-1 items-center justify-end gap-4">
-        <div className="relative w-full max-w-sm">
+      <div className="flex flex-1 items-center justify-end gap-2 md:gap-4">
+        <div className="relative w-full max-w-sm ml-auto">
           <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
           <Input
             type="search"
@@ -48,7 +48,7 @@ export default function Header() {
             <AvatarFallback>CN</AvatarFallback>
           </Avatar>
         ) : (
-          <Button variant="outline">
+          <Button variant="outline" className="hidden sm:inline-flex">
             <LogIn className="mr-2 h-4 w-4" />
             Login
           </Button>

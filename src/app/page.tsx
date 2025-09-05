@@ -49,7 +49,7 @@ export default function Home() {
   return (
     <SidebarProvider>
       <AppSidebar />
-      <SidebarInset>
+      <div className="flex flex-col flex-1">
         <Header />
         <div className="flex-1 lg:grid lg:grid-cols-[1fr_240px] lg:gap-8">
           <main className="py-6 px-4 md:px-6 lg:px-8">
@@ -92,7 +92,7 @@ export default function Home() {
             <TableOfContents headings={headings} />
           </aside>
         </div>
-      </SidebarInset>
+      </div>
     </SidebarProvider>
   );
 }
