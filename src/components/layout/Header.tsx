@@ -6,8 +6,8 @@ import { ThemeToggle } from './theme-toggle';
 export default function Header() {
   return (
     <header className="sticky top-0 z-10 flex h-16 items-center gap-4 border-b bg-background/80 backdrop-blur-sm px-4 md:px-6">
-      <SidebarTrigger className="md:hidden" />
-      <div className="flex items-center gap-2">
+      <SidebarTrigger />
+      <div className="flex items-center gap-2 md:hidden">
          <svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 24 24"

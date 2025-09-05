@@ -1,4 +1,4 @@
-import { SidebarProvider, Sidebar, SidebarInset } from '@/components/ui/sidebar';
+import { SidebarProvider, Sidebar, SidebarInset, SidebarTrigger } from '@/components/ui/sidebar';
 import { COURSE_CONTENT, type Lesson, type LessonContentBlock } from '@/lib/content';
 import AppSidebar from '@/components/layout/Sidebar';
 import Header from '@/components/layout/Header';
@@ -11,6 +11,8 @@ import Quiz from '@/components/lesson/Quiz';
 import LessonCompletion from '@/components/lesson/LessonCompletion';
 import RelatedResources from '@/components/lesson/RelatedResources';
 import { Separator } from '@/components/ui/separator';
+import { Button } from '@/components/ui/button';
+import { PanelLeft } from 'lucide-react';
 
 function renderContentBlock(block: LessonContentBlock, index: number) {
   switch (block.type) {
@@ -50,7 +52,7 @@ export default function Home() {
     <SidebarProvider>
       <div className="flex min-h-screen">
         <AppSidebar />
-        <SidebarInset>
+        <div className="flex flex-col w-full">
           <Header />
           <div className="flex-1 lg:grid lg:grid-cols-[1fr_240px] lg:gap-8">
             <main className="py-6 px-4 md:px-6 lg:px-8">
@@ -93,7 +95,7 @@ export default function Home() {
               <TableOfContents headings={headings} />
             </aside>
           </div>
-        </SidebarInset>
+        </div>
       </div>
     </SidebarProvider>
   );
