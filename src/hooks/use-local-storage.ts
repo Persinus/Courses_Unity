@@ -26,7 +26,7 @@ export function useLocalStorage<T>(key: string, initialValue: T): [T, (value: T 
     }
   }, [initialValue, key]);
 
-  const [storedValue, setStoredValue] = useState<T>(readValue);
+  const [storedValue, setStoredValue] = useState<T>(initialValue);
 
   const setValue = (value: T | ((val: T) => T)) => {
     if (typeof window == 'undefined') {
@@ -36,9 +36,16 @@ export function useLocalStorage<T>(key: string, initialValue: T): [T, (value: T 
     }
 
     try {
-      const newValue = value instanceof Function ? value(storedValue) : value;
+      // Get the new value
+      const newValue = value instanceof Function ? value(readValue()) : value;
+      
+      // Set the new value in local storage
       window.localStorage.setItem(key, JSON.stringify(newValue));
+      
+      // Update the state
       setStoredValue(newValue);
+      
+      // Dispatch a custom event to notify other instances of this hook
       window.dispatchEvent(new Event("local-storage"));
     } catch (error) {
       console.warn(`Error setting localStorage key “${key}”:`, error);
@@ -47,10 +54,14 @@ export function useLocalStorage<T>(key: string, initialValue: T): [T, (value: T 
 
   useEffect(() => {
     setStoredValue(readValue());
-  }, [readValue]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [key]);
 
   useEffect(() => {
-    const handleStorageChange = () => {
+    const handleStorageChange = (e: StorageEvent | Event) => {
+        if ((e as StorageEvent)?.key && (e as StorageEvent).key !== key) {
+            return;
+        }
       setStoredValue(readValue());
     };
 
@@ -61,7 +72,7 @@ export function useLocalStorage<T>(key: string, initialValue: T): [T, (value: T 
       window.removeEventListener("storage", handleStorageChange);
       window.removeEventListener("local-storage", handleStorageChange);
     };
-  }, [readValue]);
+  }, [key, readValue]);
 
   return [storedValue, setValue];
 }
