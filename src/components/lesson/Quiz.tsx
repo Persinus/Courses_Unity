@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from 'react';
+import { useState, useCallback } from 'react';
 import type { QuizQuestion } from '@/lib/content';
 import { useLocalStorage } from '@/hooks/use-local-storage';
 import { Button } from '@/components/ui/button';
@@ -23,12 +23,12 @@ export default function Quiz({ lessonId, questions }: QuizProps) {
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [score, setScore] = useState<number | null>(quizScores[lessonId] ?? null);
 
-  const handleSelectAnswer = (questionIndex: number, answerIndex: number) => {
+  const handleSelectAnswer = useCallback((questionIndex: number, answerIndex: number) => {
     if (isSubmitted) return;
     const newAnswers = [...selectedAnswers];
     newAnswers[questionIndex] = answerIndex;
     setSelectedAnswers(newAnswers);
-  };
+  }, [isSubmitted, selectedAnswers]);
 
   const handleSubmit = () => {
     let currentScore = 0;
