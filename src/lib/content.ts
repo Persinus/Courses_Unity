@@ -74,6 +74,87 @@ export const COURSE_STRUCTURE: SkillLevel[] = [
                     type: 'p',
                     text: 'The Unity Editor is a powerful and flexible creative hub for artists, designers, and developers. It allows you to assemble and configure all your assets, like 3D models, sprites, audio, and code, to build your game or application. Understanding the editor is the first and most crucial step in your journey.',
                   },
+                   {
+                    type: 'h2',
+                    id: 'core-windows',
+                    text: 'The Core Windows',
+                  },
+                  {
+                    type: 'p',
+                    text: "When you first open a Unity project, you will be greeted by several windows, each with a specific purpose. Let's break them down.",
+                  },
+                  {
+                    type: 'h3',
+                    id: 'the-scene-view',
+                    text: 'The Scene View',
+                  },
+                  {
+                    type: 'p',
+                    text: "This is your interactive, visual workspace. You can use the Scene View to place and manipulate GameObjects like characters, cameras, and lights. It's where you build your world.",
+                  },
+                  {
+                    type: 'h3',
+                    id: 'the-game-view',
+                    text: 'The Game View',
+                  },
+                  {
+                    type: 'p',
+                    text: "The Game View shows you what your players will see. It renders from the perspective of the cameras in your scene. When you press the Play button, the Game View comes to life.",
+                  },
+                  {
+                    type: 'callout',
+                    variant: 'tip',
+                    text: 'You can change the aspect ratio in the Game View to test how your game will look on different screen sizes.',
+                  },
+                  {
+                    type: 'h3',
+                    id: 'the-hierarchy',
+                    text: 'The Hierarchy',
+                  },
+                  {
+                    type: 'p',
+                    text: 'The Hierarchy window displays a list of every GameObject in your current scene. You can use it to select, group, and organize objects. Parent-child relationships are also managed here, which is fundamental for creating complex prefabs and characters.',
+                  },
+                  {
+                    type: 'h3',
+                    id: 'the-project-window',
+                    text: 'The Project Window',
+                  },
+                  {
+                    type: 'p',
+                    text: 'This window contains all the assets in your project, such as scripts, materials, textures, and 3D models. It mirrors the file structure of your project on your computer. Keep it organized!',
+                  },
+                  {
+                    type: 'h3',
+                    id: 'the-inspector',
+                    text: 'The Inspector',
+                  },
+                  {
+                    type: 'p',
+                    text: 'When you select a GameObject in the Hierarchy or an asset in the Project window, the Inspector shows you all its properties and components. This is where you will spend a lot of time tweaking values, attaching scripts, and configuring behavior.',
+                  },
+                   {
+                    type: 'code',
+                    lang: 'csharp',
+                    code: `// A simple C# script in Unity
+using UnityEngine;
+
+public class PlayerController : MonoBehaviour
+{
+    public float speed = 5.0f;
+
+    void Update()
+    {
+        float horizontal = Input.GetAxis("Horizontal");
+        transform.Translate(new Vector3(horizontal, 0, 0) * speed * Time.deltaTime);
+    }
+}`
+                  },
+                  {
+                      type: 'callout',
+                      variant: 'warning',
+                      text: 'Always save your scene (Ctrl+S or Cmd+S) frequently to avoid losing your work.'
+                  }
                 ],
                 practiceTasks: [
                   'Create a new 3D project in Unity Hub.',
@@ -88,16 +169,32 @@ export const COURSE_STRUCTURE: SkillLevel[] = [
                     explanation:
                       'The Game View renders from the active camera in the scene, representing the final player experience.',
                   },
+                  {
+                    question: 'Where would you modify the properties of a selected GameObject, like its position or a script variable?',
+                    options: ['Project Window', 'Hierarchy', 'Inspector', 'Scene View'],
+                    correctAnswer: 2,
+                    explanation: 'The Inspector is the context-sensitive window that displays all components and their properties for the currently selected object or asset.'
+                  },
+                  {
+                    question: 'What does the Hierarchy window contain?',
+                    options: ['All assets in your project folder', 'A list of all GameObjects in the current scene', 'C# script properties', 'Global project settings'],
+                    correctAnswer: 1,
+                    explanation: 'The Hierarchy provides a list view of every GameObject currently present in the open scene.'
+                  }
                 ],
                 relatedResources: {
                   nextLesson: {
                     title: 'GameObjects and Components',
-                    href: '#',
+                    href: '/lessons/gameobjects-and-components',
                   },
                   docs: [
                     {
                       title: 'Unity Manual: The Unity Editor',
                       href: 'https://docs.unity3d.com/Manual/UnityOverview.html',
+                    },
+                     {
+                      title: 'Unity Learn: Getting Started',
+                      href: 'https://learn.unity.com/pathway/unity-essentials',
                     },
                   ],
                 },
@@ -111,7 +208,10 @@ export const COURSE_STRUCTURE: SkillLevel[] = [
                 practiceTasks: [],
                 quiz: [],
                 relatedResources: {
-                  nextLesson: null,
+                  nextLesson: {
+                     title: 'Variables and Data Types',
+                     href: '/lessons/variables-and-data-types',
+                  },
                   docs: []
                 },
               },
@@ -150,12 +250,12 @@ export const COURSE_STRUCTURE: SkillLevel[] = [
     title: 'Fresher Level',
     categories: [
         {
-            id: 'design-patterns-fresher',
+            id: 'design-patterns',
             title: 'Design Pattern',
             modules: []
         },
         {
-            id: 'backend-fresher',
+            id: 'backend-game',
             title: 'Back End Game',
             modules: []
         }
@@ -173,9 +273,3 @@ export const COURSE_STRUCTURE: SkillLevel[] = [
     ]
   }
 ];
-
-// Keep the old export for pages that might still use it temporarily.
-// We can remove this later.
-export const COURSE_CONTENT: CourseModule[] = COURSE_STRUCTURE.flatMap(level => 
-    level.categories.flatMap(category => category.modules)
-);

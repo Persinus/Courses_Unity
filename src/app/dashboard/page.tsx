@@ -5,11 +5,11 @@ import {
   Bot,
   Calendar,
   CheckCircle,
+  ChevronRight,
   CircleDollarSign,
   Clock,
   Flame,
   Plus,
-  Search,
   User,
   Video,
 } from 'lucide-react';
@@ -17,7 +17,6 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
-import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import {
   Card,
@@ -26,15 +25,6 @@ import {
   CardHeader,
   CardTitle,
 } from '@/components/ui/card';
-import { Input } from '@/components/ui/input';
-import {
-  Sheet,
-  SheetContent,
-  SheetDescription,
-  SheetHeader,
-  SheetTitle,
-  SheetTrigger,
-} from '@/components/ui/sheet';
 import AppSidebar from '@/components/layout/Sidebar';
 import Header from '@/components/layout/Header';
 import { SidebarProvider } from '@/components/ui/sidebar';
@@ -93,24 +83,6 @@ function NotificationItem({
   );
 }
 
-function ChevronRight(props: React.SVGProps<SVGSVGElement>) {
-  return (
-    <svg
-      {...props}
-      xmlns="http://www.w3.org/2000/svg"
-      width="24"
-      height="24"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    >
-      <path d="m9 18 6-6-6-6" />
-    </svg>
-  );
-}
 
 export default function DashboardPage() {
   return (
@@ -134,7 +106,7 @@ export default function DashboardPage() {
                     </p>
                     <div className="mt-6 flex flex-wrap justify-center gap-x-6 gap-y-2 md:justify-start">
                       <Link
-                        href="#"
+                        href="/lessons/intro-to-unity-editor"
                         className="flex items-center gap-2 text-sm font-medium text-gray-600 hover:text-primary dark:text-gray-300"
                       >
                         <BookOpen className="h-4 w-4 text-yellow-500" />
