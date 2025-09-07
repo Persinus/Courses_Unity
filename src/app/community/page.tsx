@@ -195,7 +195,35 @@ const allRepos = [
     { name: 'MightyTerrainMesh', author: 'jinsek', description: 'Plugin Unity để chuyển đổi Terrain sang Mesh & Data cho Runtime Virtual Texture.', stars: '243', href: 'https://github.com/jinsek/MightyTerrainMesh', category: 'Terrain' },
     { name: 'Unity--voxel-terrain-generator', author: 'michalczemierowski', description: 'Game 3D với thế giới được tạo thủ tục từ các khối lập phương.', stars: '528', href: 'https://github.com/michalczemierowski/Unity--voxel-terrain-generator', category: 'Terrain' },
     // Timeline
-    { name: 'SpineTimeline', author: '5argon', description: 'Tạo hoạt ảnh cho SkeletonAnimation hoặc SkeletonGraphic bằng Timeline của Unity.', stars: '298', href: 'https://github.com/5argon/SpineTimeline', category: 'Timeline' }
+    { name: 'SpineTimeline', author: '5argon', description: 'Tạo hoạt ảnh cho SkeletonAnimation hoặc SkeletonGraphic bằng Timeline của Unity.', stars: '298', href: 'https://github.com/5argon/SpineTimeline', category: 'Timeline' },
+    // Tweening
+    { name: 'DOTween', author: 'Demigiant', description: 'Một engine hoạt ảnh C# cho Unity. HOTween v2.', stars: '10.2k', href: 'https://github.com/Demigiant/dotween', category: 'Tweening' },
+    { name: 'MagicTween', author: 'AnnulusGames', description: 'Thư viện tween cực nhanh được triển khai trong Unity ECS.', stars: '1.1k', href: 'https://github.com/AnnulusGames/MagicTween', category: 'Tweening' },
+    { name: 'LitMotion', author: 'AnnulusGames', description: 'Thư viện Tween siêu nhanh và không cấp phát bộ nhớ (Zero Allocation) cho Unity.', stars: '1k', href: 'https://github.com/AnnulusGames/LitMotion', category: 'Tweening' },
+    { name: 'PrimeTween', author: 'KyryloKuzyk', description: 'Thư viện tween hiệu suất cao, không cấp phát bộ nhớ cho Unity. Tạo hoạt ảnh, độ trễ và chuỗi chỉ trong một dòng mã.', stars: '1.1k', href: 'https://github.com/KyryloKuzyk/PrimeTween', category: 'Tweening' },
+    { name: 'TweenPlayables', author: 'AnnulusGames', description: 'Thư viện Tween Animation cho Unity Timeline.', stars: '300', href: 'https://github.com/AnnulusGames/TweenPlayables', category: 'Tweening' },
+    { name: 'LeanTween', author: 'dentedpixel', description: 'LeanTween là một engine hoạt ảnh hiệu quả cho Unity.', stars: '2.5k', href: 'https://github.com/dentedpixel/LeanTween', category: 'Tweening' },
+    { name: 'GoKit', author: 'prime31', description: 'Thư viện tween nhẹ cho Unity.', stars: '512', href: 'https://github.com/prime31/GoKit', category: 'Tweening' },
+    { name: 'Uween', author: 'beinteractive', description: 'Thư viện tween nhẹ cho Unity.', stars: '200', href: 'https://github.com/beinteractive/Uween', category: 'Tweening' },
+    { name: 'ZestKit', author: 'prime31', description: 'Thư viện Tween cho Unity. Sự kết hợp tốt nhất của GoKit và GoKitLite trong một API dễ sử dụng.', stars: '215', href: 'https://github.com/prime31/ZestKit', category: 'Tweening' },
+    { name: 'Animation-Sequencer', author: 'brunomikoski', description: 'Một công cụ trực quan cho phép bạn tạo các chuỗi hoạt ảnh của các tween và tinh chỉnh chúng trong trình editor.', stars: '400', href: 'https://github.com/brunomikoski/Animation-Sequencer', category: 'Tweening' },
+    // Vehicle
+    { name: 'Tork', author: 'adrenak', description: 'Hệ thống phương tiện cho Unity.', stars: '550', href: 'https://github.com/adrenak/Tork', category: 'Vehicle' },
+    { name: 'Randomation-Vehicle-Physics', author: 'JustInvoke', description: 'Hệ thống vật lý phương tiện cho engine Unity.', stars: '900', href: 'https://github.com/JustInvoke/Randomation-Vehicle-Physics', category: 'Vehicle' },
+    { name: 'Aircraft-Physics', author: 'gasgiant', description: 'Vật lý máy bay cánh cố định cho Unity.', stars: '400', href: 'https://github.com/gasgiant/Aircraft-Physics', category: 'Vehicle' },
+    // UI
+    { name: 'FairyGUI-unity', author: 'fairygui', description: 'Một framework UI linh hoạt cho Unity.', stars: '3k', href: 'https://github.com/fairygui/FairyGUI-unity', category: 'UI' },
+    { name: 'LoopScrollRect', author: 'qiankanglai', description: 'UGUI ScrollRect tái sử dụng các ô để cải thiện hiệu suất, thời gian tải và draw calls.', stars: '2.5k', href: 'https://github.com/qiankanglai/LoopScrollRect', category: 'UI' },
+    { name: 'MaterialUI', author: 'InvexGames', description: 'MaterialUI là một bộ UI cho Unity tuân theo các nguyên tắc thiết kế material design chính thức của Google.', stars: '1.5k', href: 'https://github.com/InvexGames/MaterialUI', category: 'UI' },
+    { name: 'EnhancedScrollView', author: 'tinyantstudio', description: 'Scroll view 3D tuyệt vời cho Unity (hỗ trợ NGUI 3D UGUI).', stars: '800', href: 'https://github.com/tinyantstudio/EnhancedScrollView', category: 'UI' },
+    { name: 'UIEffect', author: 'mob-sakai', description: 'UIEffect là một thành phần hiệu ứng cho phần tử uGUI trong Unity. Hãy trang trí UI của bạn với các hiệu ứng!', stars: '3k', href: 'https://github.com/mob-sakai/UIEffect', category: 'UI' },
+    { name: 'ParticleEffectForUGUI', author: 'mob-sakai', description: 'Plugin này cung cấp một thành phần để render hiệu ứng hạt cho uGUI trong Unity 2018.2+.', stars: '1.4k', href: 'https://github.com/mob-sakai/ParticleEffectForUGUI', category: 'UI' },
+    { name: 'FancyScrollView', author: 'setchi', description: 'Một thành phần scrollview có thể triển khai hoạt ảnh linh hoạt.', stars: '1.8k', href: 'https://github.com/setchi/FancyScrollView', category: 'UI' },
+    { name: 'UIWidgets', author: 'UnityTech', description: 'UIWidgets là một gói Unity giúp các nhà phát triển tạo, gỡ lỗi và triển khai các ứng dụng hiệu quả, đa nền tảng.', stars: '3.7k', href: 'https://github.com/UnityTech/UIWidgets', category: 'UI' },
+    { name: 'unity-ugui-XCharts', author: 'monitor1394', description: 'Một thư viện biểu đồ và trực quan hóa dữ liệu cho Unity.', stars: '3k', href: 'https://github.com/monitor1394/unity-ugui-XCharts', category: 'UI' },
+    { name: 'dear-imgui-unity', author: 'realgamessoftware', description: 'Gói Unity cho Dear ImGui.', stars: '450', href: 'https://github.com/realgamessoftware/dear-imgui-unity', category: 'UI' },
+    { name: 'ReactUnity', author: 'ReactUnity', description: 'Framework React và HTML cho Unity UI & UIToolkit.', stars: '1.7k', href: 'https://github.com/ReactUnity/core', category: 'UI' },
+    { name: 'uPalette', author: 'Haruma-K', description: 'Hệ thống quản lý tập trung & thay đổi hàng loạt màu sắc cho Unity.', stars: '600', href: 'https://github.com/Haruma-K/uPalette', category: 'UI' }
   ];
   
 const categories = [
@@ -207,7 +235,8 @@ const categories = [
   'Machine Learning', 'Media Player', 'Meshes', 'Modding', 'Monetization', 'Networking', 'Node Graph',
   'Obfuscation', 'Package Manager', 'Physic', 'Playable', 'Plugins', 'Procedural Generation',
   'Pooling System', 'Protobuf', 'Project Management', 'Runtime Editor', 'Scriptable Object',
-  'Scriptings', 'Scene Transition', 'Serializer', 'Services', 'Sounds', 'Threading', 'Terrain', 'Timeline'
+  'Scriptings', 'Scene Transition', 'Serializer', 'Services', 'Sounds', 'Threading', 'Terrain', 'Timeline',
+  'Tweening', 'Vehicle', 'UI'
 ];
 
 
