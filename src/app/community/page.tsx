@@ -284,7 +284,7 @@ const allRepos = [
     { name: 'Unity in Action, Third Edition', author: 'Manning', description: 'Sách về tạo game 2D, 3D, và AR/VR với Unity.', stars: 'N/A', href: 'https://www.manning.com/books/unity-in-action-third-edition', category: 'Books' },
     { name: 'Framework design guidelines', author: 'Microsoft', description: 'Hướng dẫn thiết kế framework từ Microsoft.', stars: 'N/A', href: 'https://learn.microsoft.com/en-us/dotnet/standard/design-guidelines/', category: 'Books' }
 ];
-  
+
 const categories = [
   'All', '2D', '2D Bones / IK', '3D Bones / IK', 'AI', 'Analyzer', 'Animation',
   'Anti-Cheat', 'Art Tools', 'Asset Bundle', 'Audio', 'Build Tools', 'Camera',
@@ -299,7 +299,6 @@ const categories = [
   'Tweening', 'Vehicle', 'UI', 'Utilities', 'VR/XR', 'Web View', 'Icons', 'Collections / Forums / Shops',
   'Creation Tools', 'Articles', 'Books'
 ];
-
 
 export default function CommunityPage() {
   const [activeFilter, setActiveFilter] = useState('All');
@@ -328,12 +327,12 @@ export default function CommunityPage() {
                       Lọc theo danh mục
                     </Button>
                   </DropdownMenuTrigger>
-                  <DropdownMenuContent className="w-56" align="end">
+                  <DropdownMenuContent className="w-[450px] max-h-[80vh] overflow-y-auto" align="end">
                     <DropdownMenuLabel>Chọn một danh mục</DropdownMenuLabel>
                     <DropdownMenuSeparator />
-                    <DropdownMenuRadioGroup value={activeFilter} onValueChange={setActiveFilter}>
+                    <DropdownMenuRadioGroup value={activeFilter} onValueChange={setActiveFilter} className="columns-2">
                       {categories.map((category) => (
-                        <DropdownMenuRadioItem key={category} value={category}>
+                        <DropdownMenuRadioItem key={category} value={category} className="break-inside-avoid">
                           {category}
                         </DropdownMenuRadioItem>
                       ))}
@@ -365,6 +364,7 @@ export default function CommunityPage() {
                   </CardHeader>
                   <CardContent className="flex-grow">
                     <p className="text-sm text-muted-foreground line-clamp-3">{repo.description}</p>
+
                   </CardContent>
                   <CardFooter className="flex justify-between items-center mt-auto pt-4">
                     <Badge variant="secondary">{repo.category}</Badge>
