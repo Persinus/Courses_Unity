@@ -122,7 +122,7 @@ export default function AssetLibraryPage() {
         <AppSidebar />
         <div className="flex flex-1 flex-col">
           <Header />
-          <main className="flex-1 p-4 sm:px-6 sm:py-0 md:gap-8">
+          <main className="flex-1 p-4 sm:px-6 sm:py-0 md:gap-8 md:p-6">
             <Tabs defaultValue="all">
               <div className="flex items-center">
                 <TabsList>
