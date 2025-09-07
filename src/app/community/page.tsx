@@ -48,6 +48,7 @@ const allRepos = [
     { name: 'Automatic-DynamicBone', author: 'OneYoungMean', description: 'Hệ thống lò xo cho xương và vải trong Unity, dựa trên Job System.', stars: '750', href: 'https://github.com/OneYoungMean/Automatic-DynamicBone', category: '3D Bones / IK' },
     { name: 'Aim-IK', author: 'ehsan-mohammadi', description: 'Một gói Unity để định hướng đầu (và cột sống) của nhân vật một cách thủ tục mà không cần dữ liệu hoạt ảnh.', stars: '1.1k', href: 'https://github.com/ehsan-mohammadi/Aim-IK', category: '3D Bones / IK' },
     { name: 'Hairibar.Ragdoll', author: 'hairibar', description: 'Một gói để tạo hoạt ảnh cho ragdoll thông qua các keyframe animation.', stars: '458', href: 'https://github.com/hairibar/Hairibar.Ragdoll', category: '3D Bones / IK' },
+    { name: 'TurboSequence', author: 'LukasFratzl', description: 'Hệ thống đám đông GPU dựa trên khung xương cho UE5.', stars: '468', href: 'https://github.com/LukasFratzl/TurboSequence', category: '3D Bones / IK' },
     // AI
     { name: 'UnityHFSM', author: 'Inspiaaa', description: 'Một thư viện máy trạng thái hữu hạn phân cấp (HFSM) nhanh và đã được kiểm chứng cho Unity.', stars: '522', href: 'https://github.com/Inspiaaa/UnityHFSM', category: 'AI' },
     { name: 'Unity Movement AI', author: 'antonpantev', description: 'Một thư viện các script AI di chuyển phổ biến được gọi là Steering Behaviors.', stars: '1.7k', href: 'https://github.com/antonpantev/unity-movement-ai', category: 'AI' },
@@ -248,8 +249,41 @@ const allRepos = [
     { name: 'NewtonVR', author: 'TomorrowTodayLabs', description: 'Một hệ thống tương tác thực tế ảo cho Unity dựa trên vật lý.', stars: '1.2k', href: 'https://github.com/TomorrowTodayLabs/NewtonVR', category: 'VR/XR' },
     { name: 'MixedRealityToolkit-Unity', author: 'Microsoft', description: 'MixedRealityToolkit-Unity sử dụng mã từ kho MixedRealityToolkit cơ sở và giúp việc sử dụng trong Unity dễ dàng hơn.', stars: '5.2k', href: 'https://github.com/Microsoft/MixedRealityToolkit-Unity', category: 'VR/XR' },
     { name: 'Google VR SDK for Unity', author: 'googlevr', description: 'SDK Google VR cho Unity.', stars: '4k', href: 'https://github.com/googlevr/gvr-unity-sdk', category: 'VR/XR' },
-    { name: 'ultimatexr-unity', author: 'VRMADA', description: 'UltimateXR là một framework mã nguồn mở, miễn phí giúp tạo các ứng dụng VR.', stars: '716', href: 'https://github.com/VRMADA/ultimatexr-unity', category: 'VR/XR' }
-  ];
+    { name: 'ultimatexr-unity', author: 'VRMADA', description: 'UltimateXR là một framework mã nguồn mở, miễn phí giúp tạo các ứng dụng VR.', stars: '716', href: 'https://github.com/VRMADA/ultimatexr-unity', category: 'VR/XR' },
+    // Web View
+    { name: 'servo-unity', author: 'MozillaReality', description: 'Plugin native và bộ script C# cho phép tích hợp cửa sổ trình duyệt Servo vào các cảnh Unity.', stars: '500', href: 'https://github.com/MozillaReality/servo-unity', category: 'Web View' },
+    { name: 'unity-webview', author: 'gree', description: 'Plugin cho Unity 5 hiển thị các thành phần WebView trên view của Unity. Hoạt động trên Android, iOS, Unity Web Player và OS X.', stars: '1.5k', href: 'https://github.com/gree/unity-webview', category: 'Web View' },
+    // Icons
+    { name: '700+ RPG Icons', author: 'Lorc', description: 'Hơn 700 icon RPG miễn phí để sử dụng trong game của bạn.', stars: 'N/A', href: 'https://www.reddit.com/r/IndieGaming/comments/ifmie/i_made_700_rpg_icons_free_for_use_/', category: 'Icons' },
+    { name: 'game-icons.net', author: 'Delapouite', description: 'Hơn 3400 icon game được cấp phép theo CC BY 3.0.', stars: 'N/A', href: 'https://game-icons.net', category: 'Icons' },
+    { name: 'EffectCore\'s VFX Packs', author: 'EffectCore', description: 'Các gói hiệu ứng hình ảnh AAA trả phí.', stars: 'N/A', href: 'https://assetstore.unity.com/publishers/25749', category: 'Icons' },
+    // Collections / Forums / Shops
+    { name: 'Armedunity', author: 'Armedunity', description: 'Diễn đàn tập trung vào game bắn súng.', stars: 'N/A', href: 'https://armedunity.com/', category: 'Collections / Forums / Shops' },
+    { name: 'itch.io', author: 'itch.io', description: 'Thị trường tài nguyên game.', stars: 'N/A', href: 'https://itch.io/game-assets', category: 'Collections / Forums / Shops' },
+    { name: 'Game Assets', author: 'Game Asset', description: 'Trang web tài nguyên game.', stars: 'N/A', href: 'https://game-asset.net/', category: 'Collections / Forums / Shops' },
+    { name: 'Game Dev Market', author: 'gamedevmarket', description: 'Thị trường cho các nhà phát triển game.', stars: 'N/A', href: 'https://www.gamedevmarket.net/', category: 'Collections / Forums / Shops' },
+    { name: 'Kenney', author: 'Kenney', description: 'Tài sản 2D, 3D và âm thanh miễn phí cho mục đích cá nhân và thương mại.', stars: 'N/A', href: 'https://kenney.nl/assets', category: 'Collections / Forums / Shops' },
+    { name: 'Open Game Art', author: 'OpenGameArt', description: 'Nghệ thuật game mã nguồn mở.', stars: 'N/A', href: 'https://opengameart.org/', category: 'Collections / Forums / Shops' },
+    { name: 'Unity Asset Store', author: 'Unity', description: 'Cửa hàng tài sản chính thức cho Unity.', stars: 'N/A', href: 'https://assetstore.unity.com/', category: 'Collections / Forums / Shops' },
+    { name: 'Unitylist', author: 'Unitylist', description: 'Tìm kiếm mọi thứ về Unity.', stars: 'N/A', href: 'https://unitylist.com/', category: 'Collections / Forums / Shops' },
+    // Creation Tools
+    { name: 'Aseprite', author: 'aseprite', description: 'Trình chỉnh sửa sprite động & công cụ pixel art.', stars: 'N/A', href: 'https://www.aseprite.org/', category: 'Creation Tools' },
+    { name: 'AssetForge', author: 'Kenney', description: 'Dễ dàng tạo các tài sản đơn giản trong vài giây (Trả phí).', stars: 'N/A', href: 'https://kenney.itch.io/assetforge', category: 'Creation Tools' },
+    { name: 'BFXR', author: 'bfxr', description: 'Tạo hiệu ứng âm thanh cho game máy tính (Yêu cầu Flash).', stars: 'N/A', href: 'https://www.bfxr.net/', category: 'Creation Tools' },
+    { name: 'MagicaVoxel', author: 'ephtracy', description: 'Trình chỉnh sửa Voxel miễn phí (ngay cả cho mục đích thương mại).', stars: 'N/A', href: 'https://ephtracy.github.io/', category: 'Creation Tools' },
+    { name: 'Mixamo', author: 'Mixamo', description: 'Công cụ trộn hoạt ảnh miễn phí với các hoạt ảnh miễn phí. Không được phép sử dụng trong các dự án mã nguồn mở.', stars: 'N/A', href: 'https://www.mixamo.com/', category: 'Creation Tools' },
+    // Audio
+    { name: 'Sonniss GDC 2018 Pack', author: 'Sonniss', description: 'Gói âm thanh 30GB miễn phí sử dụng.', stars: 'N/A', href: 'https://sonniss.com/gameaudiogdc18/', category: 'Audio' },
+    // Articles
+    { name: '50 Tips for Unity (2016)', author: 'HermanTulleken', description: '50 Mẹo và Thực tiễn tốt nhất cho Unity (Phiên bản 2016).', stars: 'N/A', href: 'https://www.gamasutra.com/blogs/HermanTulleken/20160812/279100/50_Tips_and_Best_Practices_for_Unity_2016_Edition.php', category: 'Articles' },
+    { name: 'Unity Package Manager 2018.3+', author: 'Unity', description: 'Vòng đời các gói Unity.', stars: 'N/A', href: 'https://blogs.unity3d.com/2018/05/09/unity-packages-life-cycle/', category: 'Articles' },
+    { name: 'Cracked Ice Shader', author: '80.lv', description: 'Cách xây dựng shader băng nứt trong Material Editor.', stars: 'N/A', href: 'https://80.lv/articles/how-to-build-cracked-ice-in-material-editor/', category: 'Articles' },
+    { name: 'Unity-Addressable', author: 'Wenrong274', description: 'Tài liệu về hệ thống Addressable của Unity.', stars: 'N/A', href: 'https://github.com/Wenrong274/Unity-Addressable', category: 'Articles' },
+    // Books
+    { name: 'Game Programming Patterns', author: 'robertnystrom', description: 'Sách về các mẫu lập trình game. Có phiên bản miễn phí và trả phí.', stars: 'N/A', href: 'http://gameprogrammingpatterns.com/', category: 'Books' },
+    { name: 'Unity in Action, Third Edition', author: 'Manning', description: 'Sách về tạo game 2D, 3D, và AR/VR với Unity.', stars: 'N/A', href: 'https://www.manning.com/books/unity-in-action-third-edition', category: 'Books' },
+    { name: 'Framework design guidelines', author: 'Microsoft', description: 'Hướng dẫn thiết kế framework từ Microsoft.', stars: 'N/A', href: 'https://learn.microsoft.com/en-us/dotnet/standard/design-guidelines/', category: 'Books' }
+];
   
 const categories = [
   'All', '2D', '2D Bones / IK', '3D Bones / IK', 'AI', 'Analyzer', 'Animation',
@@ -262,7 +296,8 @@ const categories = [
   'Obfuscation', 'Package Manager', 'Physic', 'Playable', 'Plugins', 'Procedural Generation',
   'Pooling System', 'Protobuf', 'Project Management', 'Runtime Editor', 'Scriptable Object',
   'Scriptings', 'Scene Transition', 'Serializer', 'Services', 'Sounds', 'Threading', 'Terrain', 'Timeline',
-  'Tweening', 'Vehicle', 'UI', 'Utilities', 'VR/XR'
+  'Tweening', 'Vehicle', 'UI', 'Utilities', 'VR/XR', 'Web View', 'Icons', 'Collections / Forums / Shops',
+  'Creation Tools', 'Articles', 'Books'
 ];
 
 
