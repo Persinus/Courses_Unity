@@ -12,7 +12,7 @@ import {
   useSidebar,
   SidebarFooter,
 } from '@/components/ui/sidebar';
-import { BookOpen, Library, LayoutDashboard, Settings, LifeBuoy, Github } from 'lucide-react';
+import { BookOpen, Library, LayoutDashboard, Settings, LifeBuoy, Users } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
@@ -53,6 +53,7 @@ export default function AppSidebar() {
     { href: '/dashboard', icon: LayoutDashboard, label: 'Dashboard' },
     { href: '/courses', icon: BookOpen, label: 'Khóa học' },
     { href: '/assets', icon: Library, label: 'Asset Library' },
+    { href: '/community', icon: Users, label: 'Cộng đồng' },
   ];
 
   return (
