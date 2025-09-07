@@ -1,13 +1,14 @@
 
 "use client";
 
-import { useState } from 'react';
-import { Github, ListFilter } from 'lucide-react';
+import { useState, useEffect } from 'react';
+import { Github, ListFilter, Star, GitFork, AlertCircle, Calendar, Shield, Loader2 } from 'lucide-react';
 import Link from 'next/link';
 import Image from 'next/image';
 
 import AppSidebar from '@/components/layout/Sidebar';
 import Header from '@/components/layout/Header';
+import StatusIndicator from '@/components/community/StatusIndicator';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import {
@@ -19,6 +20,14 @@ import {
   CardTitle,
 } from '@/components/ui/card';
 import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+  DialogDescription,
+  DialogFooter,
+} from '@/components/ui/dialog';
+import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuLabel,
@@ -29,7 +38,25 @@ import {
 } from '@/components/ui/dropdown-menu';
 import { SidebarProvider } from '@/components/ui/sidebar';
 
-const allRepos = [
+interface Repo {
+    name: string;
+    author: string;
+    description: string;
+    stars: string;
+    href: string;
+    category: string;
+}
+
+interface RepoDetails extends Repo {
+    forks_count?: number;
+    open_issues_count?: number;
+    license?: { name: string };
+    created_at?: string;
+    pushed_at?: string;
+}
+
+const allRepos: Repo[] = [
+    // ... (same repo list as before)
     // 2D
     { name: 'Unity2D-Components', author: 'cmilr', description: 'Một loạt các thành phần Unity C# không ngừng phát triển cho các game 2D.', stars: '1.2k', href: 'https://github.com/cmilr/Unity2D-Components', category: '2D' },
     { name: 'DeadSimple-Pixel-Perfect-Camera', author: 'cmilr', description: 'Một script camera orthographic pixel perfect cực kỳ dễ sử dụng cho các cảnh 2D trong Unity.', stars: '347', href: 'https://github.com/cmilr/DeadSimple-Pixel-Perfect-Camera', category: '2D' },
@@ -76,6 +103,7 @@ const allRepos = [
     { name: 'KEngine', author: 'mr-kelly', description: 'Một framework asset bundle cho Unity với giấy phép LGPL.', stars: '1.5k', href: 'https://github.com/mr-kelly/KEngine', category: 'Asset Bundle' },
     // Audio
     { name: 'Unity-Audio-Manager', author: 'MathewHDYT', description: 'Plugin cho phép dễ dàng phát/thay đổi/dừng/tắt tiếng/... âm thanh trong 2D/3D.', stars: '462', href: 'https://github.com/MathewHDYT/Unity-Audio-Manager', category: 'Audio' },
+    { name: 'Sonniss GDC 2018 Pack', author: 'Sonniss', description: 'Gói âm thanh 30GB miễn phí sử dụng.', stars: 'N/A', href: 'https://sonniss.com/gameaudiogdc18/', category: 'Audio' },
     // Build Tools
     { name: 'unity-actions', author: 'webbertakken', description: 'Github actions để kiểm thử và build các dự án Unity.', stars: '2.5k', href: 'https://github.com/webbertakken/unity-actions', category: 'Build Tools' },
     // Camera
@@ -272,8 +300,6 @@ const allRepos = [
     { name: 'BFXR', author: 'bfxr', description: 'Tạo hiệu ứng âm thanh cho game máy tính (Yêu cầu Flash).', stars: 'N/A', href: 'https://www.bfxr.net/', category: 'Creation Tools' },
     { name: 'MagicaVoxel', author: 'ephtracy', description: 'Trình chỉnh sửa Voxel miễn phí (ngay cả cho mục đích thương mại).', stars: 'N/A', href: 'https://ephtracy.github.io/', category: 'Creation Tools' },
     { name: 'Mixamo', author: 'Mixamo', description: 'Công cụ trộn hoạt ảnh miễn phí với các hoạt ảnh miễn phí. Không được phép sử dụng trong các dự án mã nguồn mở.', stars: 'N/A', href: 'https://www.mixamo.com/', category: 'Creation Tools' },
-    // Audio
-    { name: 'Sonniss GDC 2018 Pack', author: 'Sonniss', description: 'Gói âm thanh 30GB miễn phí sử dụng.', stars: 'N/A', href: 'https://sonniss.com/gameaudiogdc18/', category: 'Audio' },
     // Articles
     { name: '50 Tips for Unity (2016)', author: 'HermanTulleken', description: '50 Mẹo và Thực tiễn tốt nhất cho Unity (Phiên bản 2016).', stars: 'N/A', href: 'https://www.gamasutra.com/blogs/HermanTulleken/20160812/279100/50_Tips_and_Best_Practices_for_Unity_2016_Edition.php', category: 'Articles' },
     { name: 'Unity Package Manager 2018.3+', author: 'Unity', description: 'Vòng đời các gói Unity.', stars: 'N/A', href: 'https://blogs.unity3d.com/2018/05/09/unity-packages-life-cycle/', category: 'Articles' },
@@ -300,12 +326,55 @@ const categories = [
   'Creation Tools', 'Articles', 'Books'
 ];
 
+type RepoDataCache = {
+    [key: string]: { 
+        data: RepoDetails; 
+        timestamp: number;
+    };
+};
+
+const CACHE_DURATION = 1000 * 60 * 60; // 1 hour
+
 export default function CommunityPage() {
   const [activeFilter, setActiveFilter] = useState('All');
+  const [selectedRepo, setSelectedRepo] = useState<RepoDetails | null>(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isLoadingDetails, setIsLoadingDetails] = useState(false);
+  const [repoDetailsCache, setRepoDetailsCache] = useState<RepoDataCache>({});
 
   const filteredRepos = activeFilter === 'All'
     ? allRepos
     : allRepos.filter(repo => repo.category === activeFilter);
+    
+  const handleCardClick = async (repo: Repo) => {
+      setSelectedRepo(repo);
+      setIsModalOpen(true);
+      
+      const cacheKey = `${repo.author}/${repo.name}`;
+      const cachedItem = repoDetailsCache[cacheKey];
+
+      if (cachedItem && (Date.now() - cachedItem.timestamp < CACHE_DURATION)) {
+          setSelectedRepo(cachedItem.data);
+          return;
+      }
+      
+      setIsLoadingDetails(true);
+      try {
+        const response = await fetch(`https://api.github.com/repos/${repo.author}/${repo.name}`);
+        if (!response.ok) {
+            throw new Error('Failed to fetch repository details');
+        }
+        const data = await response.json();
+        const fullDetails: RepoDetails = { ...repo, ...data };
+        setSelectedRepo(fullDetails);
+        setRepoDetailsCache(prev => ({ ...prev, [cacheKey]: { data: fullDetails, timestamp: Date.now() }}));
+      } catch (error) {
+        console.error("Error fetching repo details:", error);
+        // Keep basic info, but show an error or leave details blank
+      } finally {
+        setIsLoadingDetails(false);
+      }
+  };
 
   return (
     <SidebarProvider>
@@ -343,8 +412,12 @@ export default function CommunityPage() {
             </div>
 
             <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
-              {filteredRepos.map((repo, index) => (
-                <Card key={index} className="flex flex-col hover:shadow-lg transition-shadow duration-300">
+              {filteredRepos.map((repo) => (
+                <Card 
+                  key={repo.name} 
+                  className="flex flex-col hover:shadow-lg transition-shadow duration-300 cursor-pointer"
+                  onClick={() => handleCardClick(repo)}
+                >
                   <CardHeader className="flex-row items-start gap-4">
                      <Image
                         src={`https://github.com/${repo.author}.png`}
@@ -352,12 +425,11 @@ export default function CommunityPage() {
                         width={40}
                         height={40}
                         className="rounded-full border"
+                        onError={(e) => { e.currentTarget.src = `https://github.com/identicons/${repo.author}.png`; }}
                       />
                     <div className="flex-grow overflow-hidden">
                       <CardTitle className="truncate">
-                         <Link href={repo.href} target="_blank" rel="noopener noreferrer" className="hover:underline">
-                          {repo.name}
-                         </Link>
+                         {repo.name}
                       </CardTitle>
                        <CardDescription>bởi {repo.author}</CardDescription>
                     </div>
@@ -368,14 +440,9 @@ export default function CommunityPage() {
                   </CardContent>
                   <CardFooter className="flex justify-between items-center mt-auto pt-4">
                     <Badge variant="secondary">{repo.category}</Badge>
-                    <div className="flex items-center gap-4">
-                      <Badge variant="outline">⭐️ {repo.stars}</Badge>
-                      <Button asChild variant="ghost" size="sm">
-                         <Link href={repo.href} target="_blank" rel="noopener noreferrer">
-                            <Github className="mr-2 h-4 w-4" />
-                            Github
-                         </Link>
-                       </Button>
+                     <div className="flex items-center gap-2">
+                      <Star className="h-4 w-4 text-yellow-500" />
+                      <span className="text-sm font-medium">{repo.stars}</span>
                     </div>
                   </CardFooter>
                 </Card>
@@ -384,6 +451,64 @@ export default function CommunityPage() {
           </main>
         </div>
       </div>
+      
+      <Dialog open={isModalOpen} onOpenChange={setIsModalOpen}>
+        <DialogContent className="sm:max-w-[625px]">
+          {isLoadingDetails ? (
+            <div className="flex items-center justify-center h-64">
+                <Loader2 className="h-8 w-8 animate-spin text-primary" />
+            </div>
+          ) : (
+            <>
+              <DialogHeader>
+                <DialogTitle className="text-2xl">{selectedRepo?.name}</DialogTitle>
+                <DialogDescription>
+                  Bởi <span className="font-semibold text-primary">{selectedRepo?.author}</span>
+                </DialogDescription>
+              </DialogHeader>
+              <div className="grid gap-4 py-4">
+                <p className="text-sm text-muted-foreground">{selectedRepo?.description}</p>
+                <div className="grid grid-cols-2 gap-4 text-sm">
+                    <div className="flex items-center gap-2">
+                        <Star className="h-4 w-4 text-yellow-500" />
+                        <span>{selectedRepo?.stars} stars</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                        <GitFork className="h-4 w-4 text-muted-foreground" />
+                        <span>{selectedRepo?.forks_count ?? 'N/A'} forks</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                        <AlertCircle className="h-4 w-4 text-muted-foreground" />
+                        <span>{selectedRepo?.open_issues_count ?? 'N/A'} open issues</span>
+                    </div>
+                     <div className="flex items-center gap-2">
+                        <Shield className="h-4 w-4 text-muted-foreground" />
+                        <span>{selectedRepo?.license?.name ?? 'No license'}</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                        <Calendar className="h-4 w-4 text-muted-foreground" />
+                        <span>Created: {selectedRepo?.created_at ? new Date(selectedRepo.created_at).toLocaleDateString() : 'N/A'}</span>
+                    </div>
+                    {selectedRepo?.pushed_at && (
+                        <div className="flex items-center gap-2">
+                           <StatusIndicator lastUpdated={selectedRepo.pushed_at} />
+                           <span>Last updated: {new Date(selectedRepo.pushed_at).toLocaleDateString()}</span>
+                        </div>
+                    )}
+                </div>
+              </div>
+              <DialogFooter>
+                <Button asChild>
+                  <Link href={selectedRepo?.href ?? '#'} target="_blank" rel="noopener noreferrer">
+                    <Github className="mr-2 h-4 w-4" />
+                    Visit on GitHub
+                  </Link>
+                </Button>
+              </DialogFooter>
+            </>
+          )}
+        </DialogContent>
+      </Dialog>
     </SidebarProvider>
   );
 }
