@@ -141,7 +141,24 @@ const allRepos = [
     { name: 'Nakama', author: 'heroiclabs', description: 'Một máy chủ xã hội và thời gian thực phân tán mã nguồn mở cho game và ứng dụng.', stars: '8.2k', href: 'https://github.com/heroiclabs/nakama', category: 'Networking' },
     { name: 'LiteNetLib', author: 'RevenantX', description: 'Thư viện UDP đáng tin cậy nhẹ cho Mono và .NET.', stars: '3.9k', href: 'https://github.com/RevenantX/LiteNetLib', category: 'Networking' },
     // Node Graph
-    { name: 'xNode', author: 'Siccity', description: 'Cho phép bạn xem và chỉnh sửa các biểu đồ nút (node graphs) bên trong Unity.', stars: '3.7k', href: 'https://github.com/Siccity/xNode', category: 'Node Graph' }
+    { name: 'xNode', author: 'Siccity', description: 'Cho phép bạn xem và chỉnh sửa các biểu đồ nút (node graphs) bên trong Unity.', stars: '3.7k', href: 'https://github.com/Siccity/xNode', category: 'Node Graph' },
+    { name: 'NodeGraphProcessor', author: 'alelievr', description: 'Framework trình chỉnh sửa đồ thị nút tập trung vào xử lý dữ liệu bằng Unity UIElements và C# 4.6.', stars: '1.5k', href: 'https://github.com/alelievr/NodeGraphProcessor', category: 'Node Graph' },
+    // Obfuscation
+    { name: 'Ether-Uprotector', author: 'Ether2023', description: 'Trình bảo vệ mã nguồn cho các dự án Unity.', stars: '100', href: 'https://github.com/Ether2023/Ether-Uprotector', category: 'Obfuscation' },
+    // Package Manager
+    { name: 'NuGetForUnity', author: 'GlitchEnzo', description: 'Một trình quản lý gói NuGet cho Unity.', stars: '2.5k', href: 'https://github.com/GlitchEnzo/NuGetForUnity', category: 'Package Manager' },
+    { name: 'OpenUPM', author: 'openupm', description: 'OpenUPM - Sổ đăng ký gói Unity mã nguồn mở (UPM).', stars: '1.1k', href: 'https://github.com/openupm/openupm', category: 'Package Manager' },
+    // Physic
+    { name: 'BulletSharpUnity3d', author: 'Phong13', description: 'Một nhánh của dự án BulletSharp để làm cho Bullet Physics Engine có thể sử dụng được từ mã C# trong Unity3d.', stars: '269', href: 'https://github.com/Phong13/BulletSharpUnity3d', category: 'Physic' },
+    { name: 'JoltPhysicsUnity', author: 'seep', description: 'Binding của Jolt Physics cho Unity.', stars: '1.1k', href: 'https://github.com/seep/JoltPhysicsUnity', category: 'Physic' },
+    // Playable
+    { name: 'YJZPlayableGraphView', author: 'terrynoya', description: 'Trình hiển thị playable với GraphView.', stars: '344', href: 'https://github.com/terrynoya/YJZPlayableGraphView', category: 'Playable' },
+    // Plugins
+    { name: 'google-analytics-plugin-for-unity', author: 'googleanalytics', description: 'Plugin Google Analytics cho hệ thống tạo game Unity.', stars: '845', href: 'https://github.com/googleanalytics/google-analytics-plugin-for-unity', category: 'Plugins' },
+    { name: 'uLipSync', author: 'hecomi', description: 'Plugin đồng bộ hóa môi cho Unity.', stars: '805', href: 'https://github.com/hecomi/uLipSync', category: 'Plugins' },
+    // Procedural Generation
+    { name: 'DungeonGenerator', author: 'jongallant', description: 'Trình tạo hầm ngục cho Unity.', stars: '752', href: 'https://github.com/jongallant/DungeonGenerator', category: 'Procedural Generation' },
+    { name: 'ProceduralToolkit', author: 'Syomus', description: 'Thư viện tạo thủ tục cho Unity.', stars: '1.7k', href: 'https://github.com/Syomus/ProceduralToolkit', category: 'Procedural Generation' }
   ];
   
 const categories = [
@@ -151,7 +168,8 @@ const categories = [
   'Document Reader', 'ECS Framework', 'Editor', 'Effect and Shaders', 'Effect-Highlighter',
   'Effect-Ocean', 'Effect-Toon', 'Embedding', 'Feedback Libraries', 'Framework', 'Gameplay',
   'Gizmos', 'Input', 'Job System', 'Level Editor', 'Light', 'Lua', 'Lua Utilities',
-  'Machine Learning', 'Media Player', 'Meshes', 'Modding', 'Monetization', 'Networking', 'Node Graph'
+  'Machine Learning', 'Media Player', 'Meshes', 'Modding', 'Monetization', 'Networking', 'Node Graph',
+  'Obfuscation', 'Package Manager', 'Physic', 'Playable', 'Plugins', 'Procedural Generation'
 ];
 
 
@@ -241,5 +259,3 @@ export default function CommunityPage() {
     </SidebarProvider>
   );
 }
-
-    
