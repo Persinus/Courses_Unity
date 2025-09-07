@@ -12,7 +12,7 @@ import {
   useSidebar,
   SidebarFooter,
 } from '@/components/ui/sidebar';
-import { BookOpen, Library, LayoutDashboard, Settings, LifeBuoy } from 'lucide-react';
+import { BookOpen, Library, LayoutDashboard, Settings, LifeBuoy, Github } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
