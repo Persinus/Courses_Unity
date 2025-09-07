@@ -381,6 +381,95 @@ const repoCategories = [
           { name: 'Traverser', author: 'AitorSimona', description: 'Traverser là một bộ công cụ di chuyển người chơi miễn phí và mã nguồn mở bao gồm Locomotion, Parkour và Leo trèo.', stars: '612', href: 'https://github.com/AitorSimona/Traverser' },
           { name: 'UnityTimeRewinder', author: 'SitronX', description: 'Giải pháp tua lại thời gian cho Unity, dễ dàng tùy chỉnh cho mọi dự án.', stars: '321', href: 'https://github.com/SitronX/UnityTimeRewinder' },
       ]
+  },
+  {
+      title: 'Gizmos',
+      repos: [
+          { name: 'UGizmo', author: 'harumas', description: 'Trình vẽ gizmo hiệu suất cao cho Unity.', stars: '470', href: 'https://github.com/harumas/UGizmo' },
+      ]
+  },
+  {
+      title: 'Input',
+      repos: [
+          { name: 'InputManager', author: 'daemon3000', description: 'InputManager tùy chỉnh cho Unity.', stars: '1.2k', href: 'https://github.com/daemon3000/InputManager' },
+          { name: 'InControl', author: 'pbhogan', description: 'Một trình quản lý input cho Unity giúp thuần hóa "quái vật" controller đa nền tảng.', stars: '2k', href: 'https://github.com/pbhogan/InControl' },
+          { name: 'InputBinder', author: 'RyanNielson', description: 'Dễ dàng liên kết các sự kiện input với các phương thức trong Unity.', stars: '415', href: 'https://github.com/RyanNielson/InputBinder' },
+          { name: 'TouchKit', author: 'prime31', description: 'Xử lý cử chỉ và input một cách hợp lý cho Unity.', stars: '700', href: 'https://github.com/prime31/TouchKit' },
+          { name: 'TouchScript', author: 'TouchScript', description: 'Giải pháp đa chạm hoàn chỉnh cho Unity: Win8, TUIO, Mobile.', stars: '2.2k', href: 'https://github.com/TouchScript/TouchScript' },
+      ]
+  },
+  {
+      title: 'Job System',
+      repos: [
+          { name: 'ZeroAllocJobScheduler', author: 'genaray', description: 'Một Jobscheduler C# hiệu suất cao không cấp phát bộ nhớ.', stars: '68', href: 'https://github.com/genaray/ZeroAllocJobScheduler' },
+      ]
+  },
+  {
+      title: 'Level Editor',
+      repos: [
+          { name: 'Tiled2Unity', author: 'Seanba', description: 'Xuất các tệp Tiled Map Editor (TMX) vào Unity.', stars: '2.1k', href: 'https://github.com/Seanba/Tiled2Unity' },
+          { name: 'UnityTile3D', author: 'NoelFB', description: 'Trình chỉnh sửa Tile 3D đơn giản.', stars: '433', href: 'https://github.com/NoelFB/UnityTile3D' },
+          { name: 'giles', author: 'procore3d', description: 'GILES: Một Trình chỉnh sửa Level trong Runtime cho Unity3D.', stars: '1.2k', href: 'https://github.com/procore3d/giles' },
+          { name: 'realtime-CSG-for-unity', author: 'LogicalError', description: 'Realtime-CSG, trình chỉnh sửa level CSG cho Unity.', stars: '1.2k', href: 'https://github.com/LogicalError/realtime-CSG-for-unity' },
+          { name: 'PrefabPainter', author: 'AlexanderAmeye', description: 'Một công cụ vẽ prefab cơ bản cho game engine Unity3D.', stars: '614', href: 'https://github.com/AlexanderAmeye/PrefabPainter' },
+          { name: 'hedera', author: 'radiatoryang', description: 'Vẽ dây thường xuân 3D trong Unity Editor, xem các mesh được tạo thủ tục mô phỏng sự phát triển và bám dính trong thời gian thực.', stars: '1k', href: 'https://github.com/radiatoryang/hedera' },
+          { name: 'RoadArchitect', author: 'MicroGSD', description: 'Road Architect cho Unity.', stars: '1.5k', href: 'https://github.com/MicroGSD/RoadArchitect' },
+          { name: 'LDtkUnity', author: 'Cammin', description: 'Một gói để tích hợp dễ dàng Unity với Level Designer Toolkit.', stars: '525', href: 'https://github.com/Cammin/LDtkUnity' },
+          { name: 'RuntimeTransformHandle', author: 'pshtif', description: 'Handle biến đổi trong runtime cho Unity.', stars: '388', href: 'https://github.com/pshtif/RuntimeTransformHandle' },
+      ]
+  },
+  {
+      title: 'Light',
+      repos: [
+          { name: 'Aura', author: 'raphael-ernaelsten', description: 'Ánh sáng thể tích (Volumetric Lighting) cho Unity.', stars: '1.9k', href: 'https://github.com/raphael-ernaelsten/Aura' },
+          { name: 'Simple Light Probe Placer', author: 'AlexanderVorobyov', description: 'Một công cụ đơn giản cho Unity3d giúp bạn dễ dàng đặt các Light Probe trong cảnh của mình.', stars: '241', href: 'https://github.com/AlexanderVorobyov/simple-light-probe-placer' },
+          { name: 'VolumetricLights', author: 'SlightlyMad', description: 'Ánh sáng thể tích cho Unity.', stars: '1.3k', href: 'https://github.com/SlightlyMad/VolumetricLights' },
+          { name: 'Rimlight', author: 'AdultLink', description: 'Shader rimlight có thể tùy chỉnh cho Unity, bao gồm cả hiệu ứng pulsation và cuộn nhiễu.', stars: '202', href: 'https://github.com/AdultLink/Rimlight' },
+          { name: 'unity-volumetric-fog', author: 'SiiMeR', description: 'Một triển khai sương mù thể tích trong Unity.', stars: '521', href: 'https://github.com/SiiMeR/unity-volumetric-fog' },
+          { name: 'VolumetricTracer', author: 'Fewes', description: 'Một cách đơn giản để render các vệt đạn thể tích, mềm mại trong Unity.', stars: '158', href: 'https://github.com/Fewes/VolumetricTracer' },
+      ]
+  },
+  {
+      title: 'Lua',
+      repos: [
+          { name: 'slua', author: 'pangweiwei', description: 'Binding lua nhanh nhất thông qua việc tạo mã tĩnh cho Unity3D và mono.', stars: '2.5k', href: 'https://github.com/pangweiwei/slua' },
+          { name: 'xLua', author: 'Tencent', description: 'xLua là một plugin giải pháp hot-fix cho Unity3D, hỗ trợ android, ios, windows, osx, v.v.', stars: '8.8k', href: 'https://github.com/Tencent/xLua' },
+          { name: 'UniLua', author: 'xebecnan', description: 'Một triển khai Lua 5.2 hoàn toàn bằng C# tập trung vào khả năng tương thích với Unity3D.', stars: '500', href: 'https://github.com/xebecnan/UniLua' },
+          { name: 'MoonSharp', author: 'xanathar', description: 'Một trình thông dịch cho ngôn ngữ Lua, được viết hoàn toàn bằng C# cho các nền tảng .NET, Mono, Xamarin và Unity3D.', stars: '1.4k', href: 'https://github.com/xanathar/moonsharp/' },
+      ]
+  },
+  {
+      title: 'Lua Utilities',
+      repos: [
+          { name: 'LuaProfiler-For-Unity', author: 'ElPsyCongree', description: 'Trình phân tích hiệu năng Lua cho Unity.', stars: '383', href: 'https://github.com/ElPsyCongree/LuaProfiler-For-Unity' },
+      ]
+  },
+  {
+      title: 'Machine Learning',
+      repos: [
+          { name: 'MediaPipeUnityPlugin', author: 'homuler', description: 'Plugin Unity để chạy MediaPipe.', stars: '2.1k', href: 'https://github.com/homuler/MediaPipeUnityPlugin' },
+      ]
+  },
+  {
+      title: 'Media Player',
+      repos: [
+          { name: 'Vimeo Unity SDK', author: 'vimeo', description: 'Dễ dàng stream video Vimeo của bạn vào Unity hoặc ghi và xuất bản ra Vimeo.', stars: '320', href: 'https://github.com/vimeo/vimeo-unity-sdk' },
+          { name: 'LibVLCSharp', author: 'videolan', description: 'LibVLCSharp là một API âm thanh và video đa nền tảng cho các nền tảng .NET dựa trên Thư viện LibVLC của VideoLAN.', stars: '1.4k', href: 'https://github.com/videolan/LibVLCSharp' },
+          { name: 'FFmpegUnityBind2', author: 'Spirit30', description: 'FFmpeg Unity Bind 2 là trình chỉnh sửa Video, Âm thanh, Hình ảnh mạnh mẽ nhất cho ứng dụng của bạn.', stars: '304', href: 'https://github.com/Spirit30/FFmpegUnityBind2' },
+      ]
+  },
+  {
+      title: 'Meshes',
+      repos: [
+          { name: 'UnityMeshSimplifier', author: 'Whinarn', description: 'Đơn giản hóa Mesh cho Unity.', stars: '1.5k', href: 'https://github.com/Whinarn/UnityMeshSimplifier' },
+          { name: 'MeshDecimator', author: 'Whinarn', description: 'Thư viện giảm đa giác (decimation) cho .NET và Unity.', stars: '1.2k', href: 'https://github.com/Whinarn/MeshDecimator' },
+          { name: 'SplineMesh', author: 'benoit-dumas', description: 'Một plugin Unity để tạo nội dung cong trong thời gian thực bằng các đường cong bézier.', stars: '2k', href: 'https://github.com/benoit-dumas/SplineMesh' },
+          { name: 'UnityGLTF', author: 'KhronosGroup', description: 'Trình tải GLTF trong runtime cho Unity3D.', stars: '2.5k', href: 'https://github.com/KhronosGroup/UnityGLTF' },
+          { name: 'Deform', author: 'keenanwoodall', description: 'Một hệ thống biến dạng (deformer) đầy đủ tính năng cho Unity.', stars: '2.6k', href: 'https://github.com/keenanwoodall/Deform' },
+          { name: 'unity-fracture', author: 'ElasticSea', description: 'Phá vỡ bất kỳ mesh nào trong runtime.', stars: '674', href: 'https://github.com/ElasticSea/unity-fracture' },
+          { name: 'OpenFracture', author: 'dgreenheck', description: 'Tiện ích cắt/phá vỡ mesh mã nguồn mở cho Unity.', stars: '524', href: 'https://github.com/dgreenheck/OpenFracture' },
+          { name: 'BMeshUnity', author: 'eliemichel', description: 'Một gói Unity để làm cho việc tạo mesh thủ tục trong runtime trở nên linh hoạt hơn.', stars: '141', href: 'https://github.com/eliemichel/BMeshUnity' },
+      ]
   }
 ];
 
