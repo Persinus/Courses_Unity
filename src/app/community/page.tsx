@@ -128,6 +128,105 @@ const repoCategories = [
         { name: 'GOAP', author: 'crashkonijn', description: 'Một hệ thống GOAP đa luồng cho Unity3D.', stars: '589', href: 'https://github.com/crashkonijn/GOAP' },
         { name: 'DotRecast', author: 'ikpil', description: 'Một bản port của Recast & Detour, bộ công cụ lưới điều hướng (navigation mesh) cho game, Unity3D, máy chủ, viết bằng C#.', stars: '501', href: 'https://github.com/ikpil/DotRecast' }
     ]
+  },
+  {
+      title: 'Analyzer',
+      repos: [
+          { name: 'UnityHeapExplorer', author: 'pschraut', description: 'Một trình phân tích, gỡ lỗi và hồ sơ bộ nhớ cho Unity 2019.3 trở lên.', stars: '1.5k', href: 'https://github.com/pschraut/UnityHeapExplorer' },
+          { name: 'CrashReporter', author: 'nskrkmz', description: 'Công cụ này được dùng để phát hiện nhanh các lỗi không được xử lý trong dự án Unity và lưu báo cáo chi tiết về các lỗi này vào cơ sở dữ liệu redis từ xa.', stars: '128', href: 'https://github.com/nskrkmz/CrashReporter' },
+      ]
+  },
+  {
+      title: 'Animation',
+      repos: [
+          { name: 'unity-animator-helpers', author: 'ashblue', description: 'Một micro-framework để thay đổi các tham số Animator của Unity bằng ScriptableObject. Được thiết kế để giúp việc chuyển từ script tùy chỉnh sang tham số Animator trở nên dễ dàng.', stars: '110', href: 'https://github.com/ashblue/unity-animator-helpers' },
+          { name: 'UrMotion', author: 'beinteractive', description: 'Một motion engine linh hoạt cho các hoạt ảnh không dựa trên thời gian trong Unity.', stars: '353', href: 'https://github.com/beinteractive/UrMotion' },
+          { name: 'reanimation', author: 'aarthificial', description: 'Một animator thay thế cho Unity được thiết kế riêng cho hoạt ảnh truyền thống.', stars: '719', href: 'https://github.com/aarthificial/reanimation' },
+          { name: 'AnimeTask', author: 'kyubuns', description: 'Thư viện Task Animation cho Unity.', stars: '272', href: 'https://github.com/kyubuns/AnimeTask' },
+          { name: 'Unity-Procedural-Animation', author: 'Sopiro', description: 'Hoạt ảnh thủ tục (Procedural Animation) trong Unity.', stars: '522', href: 'https://github.com/Sopiro/Unity-Procedural-Animation' },
+          { name: 'Mesh-Animation', author: 'codewriter-packages', description: 'Thư viện hoạt ảnh dựa trên vertex shader GPU tốc độ cao cho Unity (VAT, Vertex Animation Texture, Morphing Animation).', stars: '454', href: 'https://github.com/codewriter-packages/Mesh-Animation' },
+      ]
+  },
+  {
+      title: 'Anti-Cheat',
+      repos: [
+          { name: 'SafeValues', author: 'ookii-tsuki', description: 'Một thư viện Unity đơn giản để chống gian lận.', stars: '159', href: 'https://github.com/ookii-tsuki/SafeValues' },
+      ]
+  },
+  {
+      title: 'Art Tools',
+      repos: [
+          { name: 'XdUnityUI', author: 'itouh2-i0plus', description: 'Công cụ chuyển đổi từ AdobeXd sang UnityUI.', stars: '535', href: 'https://github.com/itouh2-i0plus/XdUnityUI' },
+          { name: 'Baum2', author: 'kyubuns', description: 'Công cụ chuyển đổi từ Psd sang Unity UI(uGUI).', stars: '333', href: 'https://github.com/kyubuns/Baum2' },
+          { name: 'Materialize', author: 'BoundingBoxSoftware', description: 'Một chương trình để chuyển đổi hình ảnh thành vật liệu để sử dụng trong trò chơi điện tử và các mục đích khác.', stars: '10.3k', href: 'https://github.com/BoundingBoxSoftware/Materialize' },
+          { name: 'Unity Psd Importer', author: 'ChemiKhazi', description: 'Trình nhập tệp PSD nâng cao cho Unity3D.', stars: '840', href: 'https://github.com/ChemiKhazi/UnityPsdImporter' },
+          { name: 'StableDiffusionUnityTools', author: 'KonH', description: 'Tạo tài sản trong Editor thông qua Stable Diffusion.', stars: '313', href: 'https://github.com/KonH/StableDiffusionUnityTools' },
+      ]
+  },
+  {
+      title: 'Asset Bundle / Addressable Assets',
+      repos: [
+          { name: 'AssetBundleManager', author: 'SadPandaStudios', description: 'Một trình quản lý asset bundle cho Unity.', stars: '351', href: 'https://github.com/SadPandaStudios/AssetBundleManager' },
+          { name: 'unity-addressable-importer', author: 'favoyang', description: 'Một trình nhập tài sản addressable dựa trên quy tắc.', stars: '1.2k', href: 'https://github.com/favoyang/unity-addressable-importer' },
+          { name: 'KEngine', author: 'mr-kelly', description: 'Một framework asset bundle cho Unity với giấy phép LGPL.', stars: '1.5k', href: 'https://github.com/mr-kelly/KEngine' },
+          { name: 'EZAddresser', author: 'Haruma-K', description: 'Hệ thống gán địa chỉ tự động cho Unity Addressable Asset System.', stars: '450', href: 'https://github.com/Haruma-K/EZAddresser' },
+          { name: 'SmartAddresser', author: 'CyberAgentGameEntertainment', description: 'Tự động hóa việc gán địa chỉ, gán nhãn và kiểm soát phiên bản cho Addressable Asset System của Unity.', stars: '277', href: 'https://github.com/CyberAgentGameEntertainment/SmartAddresser' },
+      ]
+  },
+  {
+      title: 'Audio Manager',
+      repos: [
+          { name: 'LucidAudio', author: 'AnnulusGames', description: 'Trình phát âm thanh đơn giản cho Unity.', stars: '106', href: 'https://github.com/AnnulusGames/LucidAudio' },
+          { name: 'Unity_AudioRig', author: 'debox-dev', description: 'Cung cấp khả năng quản lý AudioSource tốt hơn từ script, pooling, lặp, fading, theo dõi đối tượng trong không gian 3D và hơn thế nữa.', stars: '85', href: 'https://github.com/debox-dev/Unity_AudioRig' },
+          { name: 'Unity-Audio-Manager', author: 'MathewHDYT', description: 'Plugin cho phép dễ dàng phát/thay đổi/dừng/tắt tiếng/... âm thanh trong 2D/3D.', stars: '462', href: 'https://github.com/MathewHDYT/Unity-Audio-Manager' },
+      ]
+  },
+  {
+      title: 'Bolt',
+      repos: [
+          { name: 'Bolt.Addons.Community', author: 'RealityStop', description: 'Một dự án do cộng đồng thúc đẩy để mở rộng Unity Bolt.', stars: '661', href: 'https://github.com/RealityStop/Bolt.Addons.Community' },
+      ]
+  },
+  {
+      title: 'Build Tools and CI',
+      repos: [
+          { name: 'UnityMultiBuild', author: 'sinbad', description: 'Build hàng loạt cho nhiều nền tảng ngay từ trong Unity editor.', stars: '228', href: 'https://github.com/sinbad/UnityMultiBuild' },
+          { name: 'buildtool', author: 'superunitybuild', description: 'Một công cụ tự động hóa mạnh mẽ để tạo các bản build với Unity một cách nhanh chóng và dễ dàng.', stars: '879', href: 'https://github.com/superunitybuild/buildtool' },
+          { name: 'unity-actions', author: 'webbertakken', description: 'Github actions để kiểm thử và build các dự án Unity.', stars: '2.5k', href: 'https://github.com/webbertakken/unity-actions' },
+          { name: 'trimmer', author: 'sttz', description: 'Một framework cấu hình editor, build và player cho game engine Unity.', stars: '422', href: 'https://github.com/sttz/trimmer' },
+      ]
+  },
+  {
+      title: 'Camera',
+      repos: [
+          { name: 'Unity Pixel Camera', author: 'ChemiKhazi', description: 'Một camera pixel perfect không phụ thuộc vào độ phân giải cho Unity.', stars: '525', href: 'https://github.com/ChemiKhazi/UnityPixelCamera' },
+          { name: 'DeadSimple Pixel-Perfect Camera', author: 'cmilr', description: 'Một script camera orthographic pixel perfect cực kỳ dễ sử dụng cho các cảnh 2D trong Unity. Chỉ cần nhập một vài thông số và bạn đã có một camera pixel perfect hoạt động.', stars: '347', href: 'https://github.com/cmilr/DeadSimple-Pixel-Perfect-Camera' },
+          { name: 'Dynamic Multi Target Camera for Unity', author: 'lopespm', description: 'Thư viện Unity ngắn gọn giúp tự động giữ một nhóm đối tượng (ví dụ: người chơi và các đối tượng quan trọng) trong tầm nhìn.', stars: '247', href: 'https://github.com/lopespm/unity-camera-multi-target' },
+          { name: 'Camera-Shake', author: 'gasgiant', description: 'Hiệu ứng rung camera cho Unity.', stars: '185', href: 'https://github.com/gasgiant/Camera-Shake' },
+      ]
+  },
+  {
+      title: 'Character Controllers 2D',
+      repos: [
+          { name: 'CharacterController2D', author: 'prime31', description: 'Tương tự như component CharacterController có sẵn của Unity. Nó có API tương tự và cung cấp một nền tảng vững chắc để tạo ra một bộ điều khiển siêu ổn định bằng hệ thống 2D của Unity.', stars: '3.6k', href: 'https://github.com/prime31/CharacterController2D' },
+          { name: 'Unity 2D Platformer Controller', author: 'cjddmut', description: 'Một bộ điều khiển platformer 2D có thể tùy chỉnh, xử lý các cơ chế như nhảy đôi, nhảy tường và bám góc. Bao gồm một prefab có thể điều khiển được để sử dụng ngay lập tức.', stars: '1.4k', href: 'https://github.com/cjddmut/Unity-2D-Platformer-Controller' },
+          { name: 'Ultimate-2D-Controller', author: 'Matthew-J-Spencer', description: 'Một điểm khởi đầu tuyệt vời cho bộ điều khiển 2D của bạn. Tận dụng tất cả các thủ thuật ẩn như coyote time, hành động đệm, đỉnh tốc độ, đỉnh chống trọng lực, v.v.', stars: '1.4k', href: 'https://github.com/Matthew-J-Spencer/Ultimate-2D-Controller' },
+      ]
+  },
+  {
+      title: 'Character Controllers 3D',
+      repos: [
+          { name: 'SuperCharacterController', author: 'IronWarrior', description: 'Character Controller tùy chỉnh cho Unity. Đáp ứng tất cả các chức năng phổ biến như phát hiện va chạm, đẩy lùi, giới hạn độ dốc và bỏ qua va chạm.', stars: '1.7k', href: 'https://github.com/IronWarrior/SuperCharacterController' },
+          { name: 'NaughtyCharacter', author: 'dbrizov', description: 'Bộ điều khiển nhân vật góc nhìn thứ ba cho Unity.', stars: '1k', href: 'https://github.com/dbrizov/NaughtyCharacter' },
+          { name: 'Advanced Rigidbody FirstPerson Controller', author: 'Moe-Baker', description: 'Bộ điều khiển góc nhìn thứ nhất dựa trên Rigidbody.', stars: '969', href: 'https://github.com/Moe-Baker/Advanced-Rigidbody-FirstPerson-Controller' },
+          { name: 'unity-genshin-impact-movement-system', author: 'Wafflus', description: 'Một hệ thống di chuyển được tạo trong Unity cố gắng mô phỏng lại chuyển động trong Genshin Impact.', stars: '1.5k', href: 'https://github.com/Wafflus/unity-genshin-impact-movement-system' },
+      ]
+  },
+  {
+      title: 'Code Gen',
+      repos: [
+          { name: 'UnityCodeGen', author: 'AnnulusGames', description: 'Thư viện tạo mã cho Unity Editor.', stars: '127', href: 'https://github.com/AnnulusGames/UnityCodeGen' },
+      ]
   }
 ];
 
