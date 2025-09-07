@@ -158,18 +158,56 @@ const allRepos = [
     { name: 'uLipSync', author: 'hecomi', description: 'Plugin đồng bộ hóa môi cho Unity.', stars: '805', href: 'https://github.com/hecomi/uLipSync', category: 'Plugins' },
     // Procedural Generation
     { name: 'DungeonGenerator', author: 'jongallant', description: 'Trình tạo hầm ngục cho Unity.', stars: '752', href: 'https://github.com/jongallant/DungeonGenerator', category: 'Procedural Generation' },
-    { name: 'ProceduralToolkit', author: 'Syomus', description: 'Thư viện tạo thủ tục cho Unity.', stars: '1.7k', href: 'https://github.com/Syomus/ProceduralToolkit', category: 'Procedural Generation' }
+    { name: 'ProceduralToolkit', author: 'Syomus', description: 'Thư viện tạo thủ tục cho Unity.', stars: '1.7k', href: 'https://github.com/Syomus/ProceduralToolkit', category: 'Procedural Generation' },
+    // Pooling System
+    { name: 'kPooling', author: 'Kink3d', description: 'Hệ thống object pooling có thể tùy chỉnh cho Unity.', stars: '348', href: 'https://github.com/Kink3d/kPooling', category: 'Pooling System' },
+    { name: 'Replicator', author: 'ettmetal', description: 'Hệ thống pooling/tái sử dụng GameObject cho Unity.', stars: '155', href: 'https://github.com/ettmetal/Replicator', category: 'Pooling System' },
+    { name: 'Eflatun.Pooling', author: 'starikcetin', description: 'Các tiện ích object pooling cho Unity.', stars: '109', href: 'https://github.com/starikcetin/Eflatun.Pooling', category: 'Pooling System' },
+    // Protobuf
+    { name: 'protobuf-net', author: 'mgravell', description: 'Thư viện Protocol Buffers cho .NET.', stars: '4.4k', href: 'https://github.com/mgravell/protobuf-net', category: 'Protobuf' },
+    { name: 'protobuf-unity', author: '5argon', description: 'Tự động biên dịch tệp .proto thành C# trong dự án Unity khi bạn chỉnh sửa chúng.', stars: '529', href: 'https://github.com/5argon/protobuf-unity', category: 'Protobuf' },
+    // Project Management
+    { name: 'unity-desktop-lite', author: 'gblikas', description: 'Unity trong trình duyệt, thông qua Github Codespaces.', stars: '143', href: 'https://github.com/gblikas/unity-desktop-lite', category: 'Project Management' },
+    // Runtime Editor
+    { name: 'UnityRuntimeInspector', author: 'yasirkula', description: 'Giải pháp Inspector và Hierarchy cho Unity để gỡ lỗi và chỉnh sửa trong lúc chạy.', stars: '2.1k', href: 'https://github.com/yasirkula/UnityRuntimeInspector', category: 'Runtime Editor' },
+    { name: 'RuntimeUnityEditor', author: 'ManlyMarco', description: 'Công cụ inspector và gỡ lỗi trong game cho các ứng dụng được tạo bằng Unity.', stars: '1.9k', href: 'https://github.com/ManlyMarco/RuntimeUnityEditor', category: 'Runtime Editor' },
+    // Scriptable Object
+    { name: 'unity-atoms', author: 'AdamRamberg', description: 'Các thành phần mô-đun nhỏ tận dụng sức mạnh của Scriptable Objects.', stars: '2k', href: 'https://github.com/AdamRamberg/unity-atoms', category: 'Scriptable Object' },
+    { name: 'Scriptable-Framework', author: 'pablothedolphin', description: 'Một framework Unity để tạo ứng dụng mô-đun dựa trên kiến trúc ScriptableObject.', stars: '756', href: 'https://github.com/pablothedolphin/Scriptable-Framework', category: 'Scriptable Object' },
+    // Scriptings
+    { name: 'UnityNativeScripting', author: 'jacksondunstan', description: 'Viết script Unity bằng C++.', stars: '617', href: 'https://github.com/jacksondunstan/UnityNativeScripting', category: 'Scriptings' },
+    { name: 'YarnSpinner', author: 'YarnSpinnerTool', description: 'Yarn Spinner là một công cụ để xây dựng các cuộc hội thoại tương tác trong game.', stars: '2k', href: 'https://github.com/YarnSpinnerTool/YarnSpinner', category: 'Scriptings' },
+    // Scene Transition
+    { name: 'UnityScreenNavigator', author: 'Haruma-K', description: 'Thư viện cho việc chuyển màn hình, hoạt ảnh chuyển tiếp, và quản lý vòng đời màn hình trong uGUI.', stars: '965', href: 'https://github.com/Haruma-K/UnityScreenNavigator', category: 'Scene Transition' },
+    // Serializer
+    { name: 'odin-serializer', author: 'TeamSirenix', description: 'Serializer .NET nhanh, mạnh mẽ và có thể mở rộng được xây dựng cho Unity.', stars: '1.9k', href: 'https://github.com/TeamSirenix/odin-serializer', category: 'Serializer' },
+    { name: 'UnitySerializedDictionary', author: 'Prastiwar', description: 'Dictionary có thể tuần tự hóa và hiển thị trong editor của Unity.', stars: '158', href: 'https://github.com/Prastiwar/UnitySerializedDictionary', category: 'Serializer' },
+    // Services
+    { name: 'Devtodev', author: 'devtodev-analytics', description: 'Một giải pháp phân tích toàn diện cho các nhà phát triển game.', stars: '59', href: 'https://github.com/devtodev-analytics/unity-sdk', category: 'Services' },
+    { name: 'eos_plugin_for_unity', author: 'PlayEveryWare', description: 'Plugin Epic Online Services cho Unity (Gói UPM).', stars: '282', href: 'https://github.com/PlayEveryWare/eos_plugin_for_unity', category: 'Services' },
+    // Sounds
+    { name: 'usfxr', author: 'zeh', description: 'Một thư viện C# để tạo và phát các hiệu ứng âm thanh thủ tục giống như game trong Unity.', stars: '394', href: 'https://github.com/zeh/usfxr', category: 'Sounds' },
+    { name: 'Reaktion', author: 'keijiro', description: 'Bộ công cụ hoạt ảnh phản ứng với âm thanh cho Unity.', stars: '2.5k', href: 'https://github.com/keijiro/Reaktion', category: 'Sounds' },
+    // Threading
+    { name: 'UnityMainThreadDispatcher', author: 'PimDeWitte', description: 'Một cách đơn giản, an toàn cho luồng để thực thi các hành động trên luồng chính của Unity.', stars: '1.2k', href: 'https://github.com/PimDeWitte/UnityMainThreadDispatcher', category: 'Threading' },
+    { name: 'UnityAsyncRoutines', author: 'TorVestergaard', description: 'Thư viện Unity siêu nhẹ để tạo và quản lý coroutine không đồng bộ.', stars: '136', href: 'https://github.com/TorVestergaard/UnityAsyncRoutines', category: 'Threading' },
+    // Terrain
+    { name: 'MightyTerrainMesh', author: 'jinsek', description: 'Plugin Unity để chuyển đổi Terrain sang Mesh & Data cho Runtime Virtual Texture.', stars: '243', href: 'https://github.com/jinsek/MightyTerrainMesh', category: 'Terrain' },
+    { name: 'Unity--voxel-terrain-generator', author: 'michalczemierowski', description: 'Game 3D với thế giới được tạo thủ tục từ các khối lập phương.', stars: '528', href: 'https://github.com/michalczemierowski/Unity--voxel-terrain-generator', category: 'Terrain' },
+    // Timeline
+    { name: 'SpineTimeline', author: '5argon', description: 'Tạo hoạt ảnh cho SkeletonAnimation hoặc SkeletonGraphic bằng Timeline của Unity.', stars: '298', href: 'https://github.com/5argon/SpineTimeline', category: 'Timeline' }
   ];
   
 const categories = [
   'All', '2D', '2D Bones / IK', '3D Bones / IK', 'AI', 'Analyzer', 'Animation',
   'Anti-Cheat', 'Art Tools', 'Asset Bundle', 'Audio', 'Build Tools', 'Camera',
   'Character Controller', 'Controller Mappings', 'Console', 'DOTS', 'Dependency Injection',
-  'Document Reader', 'ECS Framework', 'Editor', 'Effect and Shaders', 'Effect-Highlighter',
-  'Effect-Ocean', 'Effect-Toon', 'Embedding', 'Feedback Libraries', 'Framework', 'Gameplay',
+  'Document Reader', 'ECS Framework', 'Editor', 'Effect and Shaders', 'Framework', 'Gameplay',
   'Gizmos', 'Input', 'Job System', 'Level Editor', 'Light', 'Lua', 'Lua Utilities',
   'Machine Learning', 'Media Player', 'Meshes', 'Modding', 'Monetization', 'Networking', 'Node Graph',
-  'Obfuscation', 'Package Manager', 'Physic', 'Playable', 'Plugins', 'Procedural Generation'
+  'Obfuscation', 'Package Manager', 'Physic', 'Playable', 'Plugins', 'Procedural Generation',
+  'Pooling System', 'Protobuf', 'Project Management', 'Runtime Editor', 'Scriptable Object',
+  'Scriptings', 'Scene Transition', 'Serializer', 'Services', 'Sounds', 'Threading', 'Terrain', 'Timeline'
 ];
 
 
@@ -259,3 +297,5 @@ export default function CommunityPage() {
     </SidebarProvider>
   );
 }
+
+    
