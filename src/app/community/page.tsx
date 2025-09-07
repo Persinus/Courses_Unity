@@ -227,6 +227,74 @@ const repoCategories = [
       repos: [
           { name: 'UnityCodeGen', author: 'AnnulusGames', description: 'Thư viện tạo mã cho Unity Editor.', stars: '127', href: 'https://github.com/AnnulusGames/UnityCodeGen' },
       ]
+  },
+  {
+      title: 'Controller Mappings',
+      repos: [
+          { name: 'Dualshock 3 (PS3)', author: 'Unity Forum', description: 'Sơ đồ các nút bấm cho tay cầm Dualshock 3 trên diễn đàn Unity.', stars: 'N/A', href: 'https://forum.unity.com/threads/ps3-button-map.89288/' },
+          { name: 'Dualshock 4 (PS4)', author: 'Erik Tellier', description: 'Sơ đồ các nút bấm cho tay cầm Dualshock 4.', stars: 'N/A', href: 'https://twitter.com/erik_tellier/status/1071457079854944256' },
+          { name: 'Nintendo Joy Con', author: 'Reddit', description: 'Sơ đồ các nút bấm cho tay cầm Joy Con của Nintendo Switch.', stars: 'N/A', href: 'https://www.reddit.com/r/Unity3D/comments/60wh7g/nintendo_switch_joycon_controller_mapped_for_unity/' },
+          { name: 'Nintendo Pro Controller', author: 'Unity Answers', description: 'Sơ đồ các nút bấm cho tay cầm Pro Controller của Nintendo Switch.', stars: 'N/A', href: 'https://answers.unity.com/questions/1419842/nintendo-switch-pro-controller-mapping.html' },
+          { name: 'Xbox 360', author: 'Unity Wiki', description: 'Sơ đồ các nút bấm cho tay cầm Xbox 360.', stars: 'N/A', href: 'http://wiki.unity3d.com/index.php?title=Xbox360Controller' },
+          { name: 'Xbox One', author: 'Unity Answers', description: 'Sơ đồ các nút bấm cho tay cầm Xbox One.', stars: 'N/A', href: 'https://answers.unity.com/questions/1350081/xbox-one-controller-mapping-solved.html' },
+      ]
+  },
+  {
+      title: 'Console',
+      repos: [
+          { name: 'Unity3d-BeastConsole', author: 'pointcache', description: 'Một console cho mọi nhu cầu của bạn trong Unity.', stars: '75', href: 'https://github.com/pointcache/Unity3d-BeastConsole' },
+          { name: 'consolation', author: 'mminer', description: 'Console gỡ lỗi trong game cho Unity.', stars: '277', href: 'https://github.com/mminer/consolation' },
+          { name: 'Lunar Unity Mobile Console', author: 'SpaceMadness', description: 'Trình ghi log hiệu suất cao cho Unity trên iOS/Android, được xây dựng bằng giao diện người dùng gốc của nền tảng.', stars: '1.2k', href: 'https://github.com/SpaceMadness/lunar-unity-console' },
+      ]
+  },
+  {
+      title: 'DOTS',
+      repos: [
+          { name: 'unity-ecs-navmesh', author: 'zulfajuniadi', description: 'Một bản demo triển khai Unity Entity Component System với NavMesh.', stars: '185', href: 'https://github.com/zulfajuniadi/unity-ecs-navmesh' },
+          { name: 'ECS-Tween', author: 'Xerios', description: 'Hệ thống tweening đơn giản cho Unity sử dụng ECS, hoạt động với cả GameObject!', stars: '202', href: 'https://github.com/Xerios/ECS-Tween' },
+          { name: 'Latios-Framework', author: 'Dreaming381', description: 'Một framework DOTS cho Unity.', stars: '456', href: 'https://github.com/Dreaming381/Latios-Framework' },
+          { name: 'dotsnav', author: 'dotsnav', description: 'Một gói navmesh phẳng hoàn toàn động cho Unity, hỗ trợ các agent ở mọi kích thước.', stars: '394', href: 'https://github.com/dotsnav/dotsnav' },
+          { name: 'NSprites', author: 'Antoshidza', description: 'Gói kết xuất Sprite cho Unity DOTS.', stars: '286', href: 'https://github.com/Antoshidza/NSprites' },
+      ]
+  },
+  {
+      title: 'Dependency Injection',
+      repos: [
+          { name: 'Zenject', author: 'modesttree', description: 'Framework Dependency Injection cho Unity3D.', stars: '9.3k', href: 'https://github.com/modesttree/Zenject' },
+          { name: 'VContainer', author: 'hadashiA', description: 'Thư viện DI (Dependency Inject) siêu nhanh, mã nguồn tối thiểu, không GC chạy trên Unity (IL2CPP).', stars: '1.9k', href: 'https://github.com/hadashiA/VContainer' },
+          { name: 'reflex', author: 'gustavopsantos', description: 'Framework dependency injection tối giản cho Unity.', stars: '154', href: 'https://github.com/gustavopsantos/reflex' },
+      ]
+  },
+  {
+      title: 'Document Reader',
+      repos: [
+          { name: 'GoogleSheetsUnity', author: '5argon', description: 'Lấy dữ liệu từ Google Sheets riêng tư của bạn vào Unity!! (Chỉ đọc).', stars: '500', href: 'https://github.com/5argon/GoogleSheetsUnity' },
+          { name: 'UnityCsvUtil', author: 'sinbad', description: 'Tiện ích tuần tự hóa/giải tuần tự hóa CSV nhẹ nhưng an toàn về kiểu cho các đối tượng.', stars: '133', href: 'https://github.com/sinbad/UnityCsvUtil' },
+          { name: 'UnityGoogleDrive', author: 'Elringus', description: 'SDK Google Drive cho game engine Unity.', stars: '497', href: 'https://github.com/Elringus/UnityGoogleDrive' },
+      ]
+  },
+  {
+      title: 'ECS Framework',
+      repos: [
+          { name: 'Entitas-CSharp', author: 'sschmid', description: 'Entitas là một Entity Component System (ECS) Framework siêu nhanh được tạo riêng cho C# và Unity.', stars: '5.8k', href: 'https://github.com/sschmid/Entitas-CSharp' },
+          { name: 'LeoECS', author: 'Leopotam', description: 'LeoECS là một Entity Component System (ECS) Framework nhanh được cung cấp bởi C# với tích hợp tùy chọn vào Unity.', stars: '809', href: 'https://github.com/Leopotam/ecs' },
+          { name: 'Morpeh', author: 'X-Crew', description: 'Framework ECS nhanh và đơn giản cho Unity3d.', stars: '753', href: 'https://github.com/X-Crew/Morpeh' },
+          { name: 'Arch', author: 'genaray', description: 'Một Entity Component System (ECS) dựa trên Archetype & Chunks hiệu suất cao bằng C# với tùy chọn đa luồng.', stars: '868', href: 'https://github.com/genaray/Arch' },
+      ]
+  },
+  {
+      title: 'Editor',
+      repos: [
+          { name: 'Unity-QuickSheet', author: 'kimsama', description: 'Unity-QuickSheet cho phép bạn sử dụng dữ liệu từ file bảng tính trong Unity editor.', stars: '960', href: 'https://github.com/kimsama/Unity-QuickSheet' },
+          { name: 'Unity3D Rainbow Folders', author: 'PhannGor', description: 'Tài sản này cho phép bạn đặt các biểu tượng tùy chỉnh cho bất kỳ thư mục nào trong trình duyệt dự án Unity.', stars: '1.4k', href: 'https://github.com/PhannGor/unity3d-rainbow-folders' },
+          { name: 'Reorderable Inspector', author: 'ChemiKhazi', description: 'Tự động tạo danh sách có thể sắp xếp lại cho các thành phần của game engine Unity.', stars: '617', href: 'https://github.com/ChemiKhazi/ReorderableInspector' },
+          { name: 'MyBox', author: 'Deadcows', description: 'MyBox là một bộ các thuộc tính, công cụ và phần mở rộng cho Unity.', stars: '1.4k', href: 'https://github.com/Deadcows/MyBox' },
+          { name: 'Unity-Editor-Toolbox', author: 'arimger', description: 'Các công cụ, thuộc tính tùy chỉnh, drawers và phần mở rộng cho Unity Editor.', stars: '1.3k', href: 'https://github.com/arimger/Unity-Editor-Toolbox' },
+          { name: 'NaughtyAttributes', author: 'dbrizov', description: 'Các phần mở rộng thuộc tính cho Unity.', stars: '3.9k', href: 'https://github.com/dbrizov/NaughtyAttributes' },
+          { name: 'FastScriptReload', author: 'handzlikchris', description: 'Triển khai Hot Reload cho Unity. Lặp lại mã nguồn cực nhanh mà không làm gián đoạn phiên chơi. Hỗ trợ mọi trình soạn thảo.', stars: '2k', href: 'https://github.com/handzlikchris/FastScriptReload' },
+          { name: 'hierarchy-2', author: 'truongnguyentungduy', description: 'Phần mở rộng trình soạn thảo để cải thiện cửa sổ hierarchy của Unity. Làm cho hierarchy chi tiết hơn, nhưng vẫn sạch sẽ và dễ tổ chức.', stars: '1k', href: 'https://github.com/truongnguyentungduy/hierarchy-2' },
+          { name: 'EasyButtons', author: 'madsbangh', description: 'Thêm các nút vào inspector của bạn trong Unity một cách cực kỳ dễ dàng với thuộc tính đơn giản này.', stars: '753', href: 'https://github.com/madsbangh/EasyButtons' },
+      ]
   }
 ];
 
