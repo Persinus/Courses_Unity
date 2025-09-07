@@ -295,6 +295,92 @@ const repoCategories = [
           { name: 'hierarchy-2', author: 'truongnguyentungduy', description: 'Phần mở rộng trình soạn thảo để cải thiện cửa sổ hierarchy của Unity. Làm cho hierarchy chi tiết hơn, nhưng vẫn sạch sẽ và dễ tổ chức.', stars: '1k', href: 'https://github.com/truongnguyentungduy/hierarchy-2' },
           { name: 'EasyButtons', author: 'madsbangh', description: 'Thêm các nút vào inspector của bạn trong Unity một cách cực kỳ dễ dàng với thuộc tính đơn giản này.', stars: '753', href: 'https://github.com/madsbangh/EasyButtons' },
       ]
+  },
+  {
+      title: 'Effect and Shaders',
+      repos: [
+          { name: 'Unity 5 Effects', author: 'i-saint', description: 'Không gian lưu trữ hiệu ứng cho Unity 5.', stars: '965', href: 'https://github.com/i-saint/Unity5Effects' },
+          { name: 'KinoGlitch', author: 'keijiro', description: 'Hiệu ứng video glitch cho Unity.', stars: '2.1k', href: 'https://github.com/keijiro/KinoGlitch' },
+          { name: 'ShaderForge', author: 'FreyaHolmer', description: 'Công cụ tạo shader bằng giao diện visual scripting.', stars: '5.2k', href: 'https://github.com/FreyaHolmer/ShaderForge' },
+          { name: 'SpriteGlow', author: 'Elringus', description: 'Hiệu ứng phát sáng cho sprite trong game engine Unity.', stars: '1.5k', href: 'https://github.com/Elringus/SpriteGlow' },
+          { name: 'HoloShield', author: 'AdultLink', description: 'Shader tạo khiên/lá chắn khoa học viễn tưởng có khả năng tùy biến cao cho Unity3D.', stars: '840', href: 'https://github.com/AdultLink/HoloShield' },
+          { name: 'Unity-Shaders', author: 'knapeczadam', description: 'Demo shader - Hơn 300 ví dụ.', stars: '1.9k', href: 'https://github.com/knapeczadam/Unity-Shaders' },
+          { name: 'ezy-slice', author: 'DavidArayan', description: 'Một framework mã nguồn mở để cắt mesh cho Unity3D Game Engine. Viết bằng C#.', stars: '1.2k', href: 'https://github.com/DavidArayan/ezy-slice' },
+          { name: 'X-PostProcessing-Library', author: 'QianMo', description: 'XPL: Thư viện hiệu ứng hậu xử lý chất lượng cao cho Unity.', stars: '2.4k', href: 'https://github.com/QianMo/X-PostProcessing-Library' },
+          { name: 'fluviofx', author: 'fluviofx', description: 'Mô phỏng động lực học chất lỏng cho VFX Graph của Unity.', stars: '1.1k', href: 'https://github.com/fluviofx/fluviofx' },
+          { name: 'NovaShader', author: 'CyberAgentGameEntertainment', description: 'Shader đa chức năng cho Particle System hỗ trợ Universal Render Pipeline (URP) của Unity.', stars: '659', href: 'https://github.com/CyberAgentGameEntertainment/NovaShader' },
+          { name: 'FSR2Unity', author: 'ndepoel', description: 'Tích hợp bộ nâng cấp FSR 3.0 cho pipeline render sẵn có của Unity, hỗ trợ DX11, Mac, Linux và console.', stars: '965', href: 'https://github.com/ndepoel/FSR2Unity' },
+          { name: 'HoyoToon', author: 'Melioli', description: 'Shader cho Unity (Built-in) cố gắng tái tạo shading của các game do miHoYo phát triển.', stars: '822', href: 'https://github.com/Melioli/HoyoToon' },
+      ]
+  },
+  {
+      title: 'Effect-Highlighter',
+      repos: [
+          { name: 'Outline-Effect', author: 'cakeslice', description: 'Hiệu ứng viền (Outline) dưới dạng Image Effect cho Unity.', stars: '1.5k', href: 'https://github.com/cakeslice/Outline-Effect' },
+          { name: 'UltimateOutline', author: 'Shrimpey', description: 'Cách dễ nhất để tạo hiệu ứng viền trong Unity.', stars: '394', href: 'https://github.com/Shrimpey/UltimateOutline' },
+          { name: 'UnityFx.Outline', author: 'Arvtesh', description: 'Hiệu ứng viền screen-space cho Unity3d.', stars: '458', href: 'https://github.com/Arvtesh/UnityFx.Outline' },
+          { name: 'Unity-URP-Outlines', author: 'Robinseibold', description: 'Một custom renderer feature cho hiệu ứng viền screen space.', stars: '715', href: 'https://github.com/Robinseibold/Unity-URP-Outlines' },
+          { name: 'Facepunch.Highlight', author: 'Facepunch', description: 'Hiệu ứng viền cho mesh.', stars: '185', href: 'https://github.com/Facepunch/Facepunch.Highlight' },
+      ]
+  },
+  {
+      title: 'Effect-Ocean',
+      repos: [
+          { name: 'crest-oceanrender', author: 'huwb', description: 'Một hệ thống render đại dương nâng cao được triển khai trong Unity3D.', stars: '2.5k', href: 'https://github.com/huwb/crest-oceanrender' },
+          { name: 'Ocean_Community_Next_Gen', author: 'eliasts', description: 'Phiên bản thế hệ tiếp theo của shader đại dương từ cộng đồng Unity.', stars: '933', href: 'https://github.com/eliasts/Ocean_Community_Next_Gen' },
+          { name: 'Ceto', author: 'Scrawk', description: 'Ceto: Hệ thống đại dương cho Unity.', stars: '1.1k', href: 'https://github.com/Scrawk/Ceto' },
+          { name: 'FFT-Ocean', author: 'gasgiant', description: 'Mô phỏng đại dương bằng thuật toán FFT cho Unity.', stars: '547', href: 'https://github.com/gasgiant/FFT-Ocean' },
+      ]
+  },
+  {
+      title: 'Effect-Toon',
+      repos: [
+          { name: 'ToonShading', author: 'Kink3d', description: 'Bộ sưu tập các shader "Toon" cho Unity dựa trên xấp xỉ PBR theo từng bước.', stars: '711', href: 'https://github.com/Kink3d/ToonShading' },
+          { name: 'Arktoon-Shaders', author: 'synqark', description: 'Các shader Unity thay thế do synqark tạo ra.', stars: '1.1k', href: 'https://github.com/synqark/Arktoon-Shaders' },
+          { name: 'JasonMaToonRenderPipeline', author: 'Jason-Ma-233', description: 'JTRP: Pipeline render ToonShading cho Unity HDRP.', stars: '849', href: 'https://github.com/Jason-Ma-233/JasonMaToonRenderPipeline' },
+          { name: 'UniToon', author: 'yoship1639', description: 'Toon Shader dựa trên vật lý cho các ứng dụng game. Tương thích với các hàm render tiêu chuẩn của Unity.', stars: '1.3k', href: 'https://github.com/yoship1639/UniToon' },
+          { name: 'MToon', author: 'Santarh', description: 'Toon Shader với Unity Global Illumination.', stars: '1k', href: 'https://github.com/Santarh/MToon' },
+          { name: 'StarRailNPRShader', author: 'stalomeow', description: 'Shader fan-made cho Unity URP cố gắng tái tạo shading của Honkai: Star Rail.', stars: '878', href: 'https://github.com/stalomeow/StarRailNPRShader' },
+      ]
+  },
+  {
+      title: 'Embedding',
+      repos: [
+          { name: 'react-native-unity-view', author: 'f111fei', description: 'Hiển thị một view Unity trong React Native.', stars: '1.5k', href: 'https://github.com/f111fei/react-native-unity-view' },
+          { name: 'flutter-unity-view-widget', author: 'snowballdigital', description: 'Widget nhúng view của game engine Unity cho Flutter.', stars: '1.9k', href: 'https://github.com/snowballdigital/flutter-unity-view-widget' },
+      ]
+  },
+  {
+      title: 'Feedback Libraries',
+      repos: [
+          { name: 'Juce-Feedbacks', author: 'Juce-Assets', description: 'Thư viện feedbacks mã nguồn mở, là một phần của framework công cụ Juce Unity.', stars: '197', href: 'https://github.com/Juce-Assets/Juce-Feedbacks' },
+      ]
+  },
+  {
+      title: 'Framework',
+      repos: [
+          { name: 'Fungus', author: 'snozbot', description: 'Một công cụ tạo visual novel và game kể chuyện dễ sử dụng cho Unity.', stars: '2.5k', href: 'https://github.com/snozbot/fungus' },
+          { name: 'Node_Editor_Framework', author: 'Seneral', description: 'Framework Node Editor cho Unity3D.', stars: '2.5k', href: 'https://github.com/Seneral/Node_Editor_Framework' },
+          { name: 'QFramework', author: 'liangxiegame', description: 'Framework K.I.S.S (Keep It Simple, Stupid) đầu tiên của bạn cho Unity 3D.', stars: '4k', href: 'https://github.com/liangxiegame/QFramework' },
+          { name: 'GameFramework', author: 'FlipWebApps', description: 'Một framework miễn phí cho Unity giúp tăng tốc độ phát triển và bộ tính năng của game.', stars: '1.7k', href: 'https://github.com/FlipWebApps/GameFramework' },
+          { name: 'Zinnia.Unity', author: 'ExtendRealityLtd', description: 'Một bộ sưu tập các design pattern để giải quyết các vấn đề phổ biến.', stars: '447', href: 'https://github.com/ExtendRealityLtd/Zinnia.Unity' },
+          { name: 'JEngine', author: 'JasonXuDeveloper', description: 'JEngine là một framework được tối ưu hóa và dễ sử dụng cho lập trình viên Unity, chứa các tính năng mạnh mẽ.', stars: '1.6k', href: 'https://github.com/JasonXuDeveloper/JEngine' },
+          { name: 'CosmosFramework', author: 'DonnYep', description: 'CosmosFramework là một framework phát triển Unity dạng plug-in, có trọng lượng từ trung bình đến nhẹ.', stars: '1.1k', href: 'https://github.com/DonnYep/CosmosFramework' },
+      ]
+  },
+  {
+      title: 'Gameplay',
+      repos: [
+          { name: 'UnityGameplayAbilitySystem', author: 'sjai013', description: 'Một framework thống nhất để triển khai các hệ thống kỹ năng (ability systems) trong Unity.', stars: '1.1k', href: 'https://github.com/sjai013/UnityGameplayAbilitySystem' },
+          { name: 'Inventory-Pro', author: 'devdogio', description: 'Hệ thống kho đồ (Inventory System) bán chạy nhất cho Unity - nay đã miễn phí và mã nguồn mở!', stars: '1.2k', href: 'https://github.com/devdogio/Inventory-Pro' },
+          { name: 'Quest-System-Pro', author: 'devdogio', description: 'Hệ thống nhiệm vụ và cây hội thoại mạnh mẽ cho Unity - nay đã miễn phí và mã nguồn mở!', stars: '528', href: 'https://github.com/devdogio/Quest-System-Pro' },
+          { name: 'Inventory', author: 'FarrokhGames', description: 'Một hệ thống kho đồ kiểu Diablo 2 cho Unity3D.', stars: '715', href: 'https://github.com/FarrokhGames/Inventory' },
+          { name: 'RPGCore', author: 'Fydar', description: 'RPGCore là một bộ công cụ để sản xuất các game và cơ chế RPG cho Unity.', stars: '614', href: 'https://github.com/Fydar/RPGCore' },
+          { name: 'SanAndreasUnity', author: 'GTA-ASM', description: 'Tái triển khai mã nguồn mở của game engine GTA San Andreas trong Unity.', stars: '1.9k', href: 'https://github.com/GTA-ASM/SanAndreasUnity' },
+          { name: 'FogOfWar', author: 'kitepro', description: 'Một plugin cho Unity3D để thêm hiệu ứng Fog of War (sương mù chiến tranh) vào game.', stars: '601', href: 'https://github.com/kitepro/FogOfWar' },
+          { name: 'Traverser', author: 'AitorSimona', description: 'Traverser là một bộ công cụ di chuyển người chơi miễn phí và mã nguồn mở bao gồm Locomotion, Parkour và Leo trèo.', stars: '612', href: 'https://github.com/AitorSimona/Traverser' },
+          { name: 'UnityTimeRewinder', author: 'SitronX', description: 'Giải pháp tua lại thời gian cho Unity, dễ dàng tùy chỉnh cho mọi dự án.', stars: '321', href: 'https://github.com/SitronX/UnityTimeRewinder' },
+      ]
   }
 ];
 
