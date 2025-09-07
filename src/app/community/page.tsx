@@ -362,6 +362,12 @@ export default function CommunityPage() {
       try {
         const response = await fetch(`https://api.github.com/repos/${repo.author}/${repo.name}`);
         if (!response.ok) {
+            // For repos that aren't on GitHub (like links to articles, etc.)
+            // we can just use the basic info and not show an error.
+            if (response.status === 404) {
+                 setSelectedRepo({ ...repo });
+                 return;
+            }
             throw new Error('Failed to fetch repository details');
         }
         const data = await response.json();
@@ -370,7 +376,7 @@ export default function CommunityPage() {
         setRepoDetailsCache(prev => ({ ...prev, [cacheKey]: { data: fullDetails, timestamp: Date.now() }}));
       } catch (error) {
         console.error("Error fetching repo details:", error);
-        // Keep basic info, but show an error or leave details blank
+        setSelectedRepo({ ...repo }); // Show basic info on error
       } finally {
         setIsLoadingDetails(false);
       }
@@ -412,9 +418,9 @@ export default function CommunityPage() {
             </div>
 
             <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
-              {filteredRepos.map((repo) => (
+              {filteredRepos.map((repo, index) => (
                 <Card 
-                  key={repo.name} 
+                  key={`${repo.name}-${index}`}
                   className="flex flex-col hover:shadow-lg transition-shadow duration-300 cursor-pointer"
                   onClick={() => handleCardClick(repo)}
                 >
@@ -440,10 +446,12 @@ export default function CommunityPage() {
                   </CardContent>
                   <CardFooter className="flex justify-between items-center mt-auto pt-4">
                     <Badge variant="secondary">{repo.category}</Badge>
-                     <div className="flex items-center gap-2">
-                      <Star className="h-4 w-4 text-yellow-500" />
-                      <span className="text-sm font-medium">{repo.stars}</span>
-                    </div>
+                     {repo.stars !== 'N/A' && (
+                        <div className="flex items-center gap-2">
+                            <Star className="h-4 w-4 text-yellow-500" />
+                            <span className="text-sm font-medium">{repo.stars}</span>
+                        </div>
+                     )}
                   </CardFooter>
                 </Card>
               ))}
@@ -454,54 +462,60 @@ export default function CommunityPage() {
       
       <Dialog open={isModalOpen} onOpenChange={setIsModalOpen}>
         <DialogContent className="sm:max-w-[625px]">
+           <DialogHeader>
+              <DialogTitle className="text-2xl">{selectedRepo?.name ?? 'Loading...'}</DialogTitle>
+              {selectedRepo?.author && (
+                <DialogDescription>
+                  Bởi <span className="font-semibold text-primary">{selectedRepo.author}</span>
+                </DialogDescription>
+              )}
+            </DialogHeader>
           {isLoadingDetails ? (
             <div className="flex items-center justify-center h-64">
                 <Loader2 className="h-8 w-8 animate-spin text-primary" />
             </div>
           ) : (
             <>
-              <DialogHeader>
-                <DialogTitle className="text-2xl">{selectedRepo?.name}</DialogTitle>
-                <DialogDescription>
-                  Bởi <span className="font-semibold text-primary">{selectedRepo?.author}</span>
-                </DialogDescription>
-              </DialogHeader>
               <div className="grid gap-4 py-4">
                 <p className="text-sm text-muted-foreground">{selectedRepo?.description}</p>
-                <div className="grid grid-cols-2 gap-4 text-sm">
-                    <div className="flex items-center gap-2">
-                        <Star className="h-4 w-4 text-yellow-500" />
-                        <span>{selectedRepo?.stars} stars</span>
-                    </div>
-                    <div className="flex items-center gap-2">
-                        <GitFork className="h-4 w-4 text-muted-foreground" />
-                        <span>{selectedRepo?.forks_count ?? 'N/A'} forks</span>
-                    </div>
-                    <div className="flex items-center gap-2">
-                        <AlertCircle className="h-4 w-4 text-muted-foreground" />
-                        <span>{selectedRepo?.open_issues_count ?? 'N/A'} open issues</span>
-                    </div>
-                     <div className="flex items-center gap-2">
-                        <Shield className="h-4 w-4 text-muted-foreground" />
-                        <span>{selectedRepo?.license?.name ?? 'No license'}</span>
-                    </div>
-                    <div className="flex items-center gap-2">
-                        <Calendar className="h-4 w-4 text-muted-foreground" />
-                        <span>Created: {selectedRepo?.created_at ? new Date(selectedRepo.created_at).toLocaleDateString() : 'N/A'}</span>
-                    </div>
-                    {selectedRepo?.pushed_at && (
+                 {selectedRepo?.href.includes('github.com') ? (
+                    <div className="grid grid-cols-2 gap-4 text-sm">
                         <div className="flex items-center gap-2">
-                           <StatusIndicator lastUpdated={selectedRepo.pushed_at} />
-                           <span>Last updated: {new Date(selectedRepo.pushed_at).toLocaleDateString()}</span>
+                            <Star className="h-4 w-4 text-yellow-500" />
+                            <span>{selectedRepo?.stars} stars</span>
                         </div>
-                    )}
-                </div>
+                        <div className="flex items-center gap-2">
+                            <GitFork className="h-4 w-4 text-muted-foreground" />
+                            <span>{selectedRepo?.forks_count ?? 'N/A'} forks</span>
+                        </div>
+                        <div className="flex items-center gap-2">
+                            <AlertCircle className="h-4 w-4 text-muted-foreground" />
+                            <span>{selectedRepo?.open_issues_count ?? 'N/A'} open issues</span>
+                        </div>
+                         <div className="flex items-center gap-2">
+                            <Shield className="h-4 w-4 text-muted-foreground" />
+                            <span>{selectedRepo?.license?.name ?? 'No license'}</span>
+                        </div>
+                        <div className="flex items-center gap-2">
+                            <Calendar className="h-4 w-4 text-muted-foreground" />
+                            <span>Created: {selectedRepo?.created_at ? new Date(selectedRepo.created_at).toLocaleDateString() : 'N/A'}</span>
+                        </div>
+                        {selectedRepo?.pushed_at && (
+                            <div className="flex items-center gap-2">
+                               <StatusIndicator lastUpdated={selectedRepo.pushed_at} />
+                               <span>Last updated: {new Date(selectedRepo.pushed_at).toLocaleDateString()}</span>
+                            </div>
+                        )}
+                    </div>
+                ) : (
+                    <p className="text-sm text-blue-500">Đây là một liên kết đến một bài viết hoặc tài nguyên bên ngoài.</p>
+                )}
               </div>
               <DialogFooter>
                 <Button asChild>
                   <Link href={selectedRepo?.href ?? '#'} target="_blank" rel="noopener noreferrer">
                     <Github className="mr-2 h-4 w-4" />
-                    Visit on GitHub
+                    Visit Resource
                   </Link>
                 </Button>
               </DialogFooter>
@@ -512,3 +526,5 @@ export default function CommunityPage() {
     </SidebarProvider>
   );
 }
+
+    
