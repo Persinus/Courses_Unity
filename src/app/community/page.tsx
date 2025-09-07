@@ -470,6 +470,54 @@ const repoCategories = [
           { name: 'OpenFracture', author: 'dgreenheck', description: 'Tiện ích cắt/phá vỡ mesh mã nguồn mở cho Unity.', stars: '524', href: 'https://github.com/dgreenheck/OpenFracture' },
           { name: 'BMeshUnity', author: 'eliemichel', description: 'Một gói Unity để làm cho việc tạo mesh thủ tục trong runtime trở nên linh hoạt hơn.', stars: '141', href: 'https://github.com/eliemichel/BMeshUnity' },
       ]
+  },
+  {
+      title: 'Modding',
+      repos: [
+          { name: 'dotPeek', author: 'JetBrains', description: 'Trình dịch ngược và trình duyệt Assembly .NET miễn phí.', stars: 'N/A', href: 'https://www.jetbrains.com/decompiler/' },
+          { name: 'OpenSesame', author: 'mob-sakai', description: 'Một trình biên dịch Roslyn tùy chỉnh cho phép truy cập vào các thành phần internal/private trong các assembly khác. Hãy nói "Vừng ơi, mở ra!"', stars: '456', href: 'https://github.com/mob-sakai/OpenSesame' },
+          { name: 'Harmony', author: 'pardeike', description: 'Một thư viện để vá, thay thế và trang trí các phương thức .NET và Mono trong thời gian chạy.', stars: '4.1k', href: 'https://github.com/pardeike/Harmony' },
+          { name: 'dnSpy', author: '0xd4d', description: 'Trình gỡ lỗi và trình chỉnh sửa assembly .NET.', stars: '24.9k', href: 'https://github.com/0xd4d/dnSpy' },
+          { name: 'ILSpy', author: 'icsharpcode', description: 'Trình dịch ngược .NET với hỗ trợ tạo PDB, ReadyToRun, Metadata (&nhiều hơn nữa) - đa nền tảng!', stars: '18.4k', href: 'https://github.com/icsharpcode/ILSpy' },
+          { name: 'AssetStudio', author: 'Perfare', description: 'AssetStudio là một công cụ để khám phá, trích xuất và xuất các asset và assetbundle.', stars: '13.2k', href: 'https://github.com/Perfare/AssetStudio' },
+          { name: 'MelonLoader', author: 'LavaGang', description: 'Trình tải Mod đa năng đầu tiên trên thế giới cho các game Unity tương thích với cả Il2Cpp và Mono.', stars: '2.1k', href: 'https://github.com/LavaGang/MelonLoader' },
+          { name: 'ThunderKit', author: 'PassivePicasso', description: 'Môi trường phát triển dự án Mod cho Unity và các game Unity.', stars: '228', href: 'https://github.com/PassivePicasso/ThunderKit' },
+      ]
+  },
+  {
+      title: 'Monetization',
+      repos: [
+          { name: 'unity3d-store', author: 'soomla', description: 'Thư viện mua hàng trong ứng dụng và kinh tế ảo cho Unity. Một phần của The SOOMLA Framework.', stars: '1.5k', href: 'https://github.com/soomla/unity3d-store' },
+          { name: 'Google Mobile Ads Unity Plugin', author: 'googleads', description: 'Plugin Unity chính thức cho Google Mobile Ads SDK.', stars: '1.2k', href: 'https://github.com/googleads/googleads-mobile-unity' },
+      ]
+  },
+  {
+      title: 'Networking',
+      repos: [
+          { name: 'UnitySocketIO', author: 'NetEase', description: 'Client socket.io cho unity3d.', stars: '1.2k', href: 'https://github.com/NetEase/UnitySocketIO' },
+          { name: 'websocket-sharp', author: 'sta', description: 'Một triển khai C# của máy khách và máy chủ giao thức WebSocket.', stars: '5.5k', href: 'https://github.com/sta/websocket-sharp' },
+          { name: 'Hazel-Networking', author: 'DarkRiftNetworking', description: 'Một thư viện mạng cấp thấp cho C# cung cấp giao tiếp dựa trên thông điệp, hướng kết nối qua TCP, UDP và RUDP.', stars: '1.3k', href: 'https://github.com/DarkRiftNetworking/Hazel-Networking' },
+          { name: 'Nakama', author: 'heroiclabs', description: 'Một máy chủ xã hội và thời gian thực phân tán mã nguồn mở cho các game và ứng dụng.', stars: '8.3k', href: 'https://github.com/heroiclabs/nakama' },
+          { name: 'Forge Networking Remastered', author: 'BeardedManStudios', description: 'Hệ thống mạng game multiplayer mã nguồn mở và miễn phí có tích hợp rất tốt với game engine Unity.', stars: '1.8k', href: 'https://github.com/BeardedManStudios/ForgeNetworkingRemastered' },
+          { name: 'MagicOnion', author: 'neuecc', description: 'Framework RPC Streaming dựa trên gRPC HTTP/2 cho .NET, .NET Core và Unity.', stars: '3.6k', href: 'https://github.com/neuecc/MagicOnion' },
+          { name: 'LiteNetLib', author: 'RevenantX', description: 'Thư viện UDP đáng tin cậy nhẹ cho Mono và .NET.', stars: '3.9k', href: 'https://github.com/RevenantX/LiteNetLib' },
+          { name: 'Steamworks.NET', author: 'rlabrecque', description: 'Wrapper Steamworks cho Unity / C#.', stars: '2.5k', href: 'https://github.com/rlabrecque/Steamworks.NET' },
+          { name: 'Colyseus', author: 'colyseus', description: 'Máy chủ game multiplayer cho Node.js.', stars: '5.7k', href: 'http://colyseus.io/' },
+          { name: 'ET', author: 'egametang', description: 'Framework Client Unity3D và Server C#.', stars: '6.4k', href: 'https://github.com/egametang/ET' },
+          { name: 'Teleport', author: 'debox-dev', description: 'Một framework mạng game thời gian thực cho Unity bằng C# thuần túy, nhanh và nhẹ.', stars: '197', href: 'https://github.com/debox-dev/Teleport' },
+          { name: 'Master Server Toolkit', author: 'aevien', description: 'Framework cho phép bạn tạo máy chủ và dịch vụ game cho trò chơi của mình bên trong Unity.', stars: '454', href: 'https://github.com/aevien/master-server-toolkit' },
+      ]
+  },
+  {
+      title: 'Node Graph',
+      repos: [
+          { name: 'xNode', author: 'Siccity', description: 'Cho phép bạn xem và chỉnh sửa các biểu đồ node bên trong Unity.', stars: '3.4k', href: 'https://github.com/Siccity/xNode' },
+          { name: 'UnityRuntimeNodeEditor', author: 'cemuka', description: 'Trình chỉnh sửa node trong runtime của Unity sử dụng Unity UI.', stars: '674', href: 'https://github.com/cemuka/UnityRuntimeNodeEditor' },
+          { name: 'NodeGraphProcessor', author: 'alelievr', description: 'Framework trình chỉnh sửa biểu đồ node tập trung vào xử lý dữ liệu bằng Unity UIElements và C# 4.6.', stars: '1.4k', href: 'https://github.com/alelievr/NodeGraphProcessor' },
+          { name: 'Dialogue', author: 'Siccity', description: 'Hệ thống hội thoại dựa trên node.', stars: '849', href: 'https://github.com/Siccity/Dialogue' },
+          { name: 'NodeBasedDialogueSystem', author: 'merpheus-dev', description: 'Hệ thống hội thoại dựa trên node cho Unity.', stars: '445', href: 'https://github.com/merpheus-dev/NodeBasedDialogueSystem' },
+          { name: 'unity-dialogue-system', author: 'Wafflus', description: 'Một hệ thống hội thoại dựa trên node cơ bản được tạo cho Unity.', stars: '488', href: 'https://github.com/Wafflus/unity-dialogue-system' },
+      ]
   }
 ];
 
