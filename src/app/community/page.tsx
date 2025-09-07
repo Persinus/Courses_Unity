@@ -104,6 +104,31 @@ const repoCategories = [
       },
     ],
   },
+  {
+    title: '3D Bones / IK',
+    repos: [
+        { name: 'EZSoftBone', author: 'EZhex1991', description: 'Một trình mô phỏng động học đơn giản cho Unity, bạn có thể sử dụng nó để mô phỏng tóc/đuôi/ngực/váy và các vật thể mềm khác.', stars: '1.2k', href: 'https://github.com/EZhex1991/EZSoftBone' },
+        { name: 'Automatic-DynamicBone', author: 'OneYoungMean', description: 'Hệ thống lò xo cho xương và vải trong Unity, dựa trên Job System.', stars: '750', href: 'https://github.com/OneYoungMean/Automatic-DynamicBone' },
+        { name: 'Aim-IK', author: 'ehsan-mohammadi', description: 'Một gói Unity để định hướng đầu (và cột sống) của nhân vật một cách thủ tục mà không cần dữ liệu hoạt ảnh.', stars: '1.1k', href: 'https://github.com/ehsan-mohammadi/Aim-IK' },
+        { name: 'Hairibar.Ragdoll', author: 'hairibar', description: 'Một gói để tạo hoạt ảnh cho ragdoll thông qua các keyframe animation.', stars: '458', href: 'https://github.com/hairibar/Hairibar.Ragdoll' }
+    ]
+  },
+  {
+    title: 'AI',
+    repos: [
+        { name: 'UnityHFSM', author: 'Inspiaaa', description: 'Một thư viện máy trạng thái hữu hạn phân cấp (HFSM) nhanh và đã được kiểm chứng cho Unity, được thiết kế để dễ sử dụng nhưng vẫn mạnh mẽ mà không ảnh hưởng đến hiệu suất.', stars: '522', href: 'https://github.com/Inspiaaa/UnityHFSM' },
+        { name: 'Unity Movement AI', author: 'antonpantev', description: 'Một thư viện các script AI di chuyển phổ biến được gọi là Steering Behaviors. Bạn có thể sử dụng các script này để giúp NPC di chuyển trong game của mình.', stars: '1.7k', href: 'https://github.com/antonpantev/unity-movement-ai' },
+        { name: 'Crystal AI', author: 'igiagkiozis', description: 'Một Utility AI cho C# và Unity.', stars: '488', href: 'https://github.com/igiagkiozis/CrystalAI' },
+        { name: 'EpPathFinding.cs', author: 'juhgiyo', description: 'Một thuật toán tìm đường Jump Point Search cho các game dựa trên lưới (grid) bằng C#.', stars: '383', href: 'https://github.com/juhgiyo/EpPathFinding.cs' },
+        { name: 'UnitySteer', author: 'ricardojmendez', description: 'Các hành vi lái, tránh chướng ngại vật và đi theo đường dẫn cho Unity Game Engine.', stars: '499', href: 'https://github.com/ricardojmendez/UnitySteer' },
+        { name: 'NPBehave', author: 'meniku', description: 'Cây hành vi (Behavior Trees) điều khiển bằng sự kiện cho Unity 3D.', stars: '965', href: 'https://github.com/meniku/NPBehave' },
+        { name: 'Path-Creator', author: 'SebLague', description: 'Tài sản tạo đường dẫn (path) cho việc phát triển game trên Unity.', stars: '4.5k', href: 'https://github.com/SebLague/Path-Creator' },
+        { name: 'NavMeshPlus', author: 'h8man', description: 'Giải pháp tìm đường NavMesh cho game 2D trên Unity.', stars: '1.9k', href: 'https://github.com/h8man/NavMeshPlus' },
+        { name: 'behaviac', author: 'Tencent', description: 'Behaviac là một framework phát triển AI cho game, và cũng có thể được sử dụng như một công cụ thiết kế prototype game nhanh chóng.', stars: '3.6k', href: 'https://github.com/Tencent/behaviac' },
+        { name: 'GOAP', author: 'crashkonijn', description: 'Một hệ thống GOAP đa luồng cho Unity3D.', stars: '589', href: 'https://github.com/crashkonijn/GOAP' },
+        { name: 'DotRecast', author: 'ikpil', description: 'Một bản port của Recast & Detour, bộ công cụ lưới điều hướng (navigation mesh) cho game, Unity3D, máy chủ, viết bằng C#.', stars: '501', href: 'https://github.com/ikpil/DotRecast' }
+    ]
+  }
 ];
 
 
