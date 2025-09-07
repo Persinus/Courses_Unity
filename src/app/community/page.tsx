@@ -86,6 +86,8 @@ const allRepos = [
     // Controller Mappings
     { name: 'Dualshock 3 (PS3)', author: 'UnityCommunity', description: 'Sơ đồ nút cho tay cầm Dualshock 3.', stars: 'N/A', href: 'https://forum.unity.com/threads/ps3-button-map.89288/', category: 'Controller Mappings' },
     { name: 'Dualshock 4 (PS4)', author: 'E.Tellier', description: 'Sơ đồ nút cho tay cầm Dualshock 4.', stars: 'N/A', href: 'https://twitter.com/erik_tellier/status/1071457079854944256', category: 'Controller Mappings' },
+    // Console
+    { name: 'Lunar Unity Mobile Console', author: 'SpaceMadness', description: 'Trình ghi log Unity hiệu suất cao cho iOS/Android được xây dựng bằng UI gốc của nền tảng.', stars: '1.1k', href: 'https://github.com/SpaceMadness/lunar-unity-console', category: 'Console' },
     // DOTS
     { name: 'unity-ecs-navmesh', author: 'zulfajuniadi', description: 'Một demo triển khai Unity Entity Component System với NavMesh.', stars: '243', href: 'https://github.com/zulfajuniadi/unity-ecs-navmesh', category: 'DOTS' },
     { name: 'ECS-Tween', author: 'Xerios', description: 'Hệ thống tweening đơn giản cho Unity sử dụng ECS, hoạt động với cả GameObjects.', stars: '200', href: 'https://github.com/Xerios/ECS-Tween', category: 'DOTS' },
@@ -103,6 +105,16 @@ const allRepos = [
     // Effect and Shaders
     { name: 'KinoGlitch', author: 'keijiro', description: 'Các hiệu ứng glitch video cho Unity.', stars: '1.5k', href: 'https://github.com/keijiro/KinoGlitch', category: 'Effect and Shaders' },
     { name: 'ShaderForge', author: 'FreyaHolmer', description: 'Công cụ tạo shader bằng giao diện trực quan.', stars: '5.9k', href: 'https://github.com/FreyaHolmer/ShaderForge', category: 'Effect and Shaders' },
+    // Effect-Highlighter
+    { name: 'Outline-Effect', author: 'cakeslice', description: 'Hiệu ứng viền (Outline Image Effect) cho Unity.', stars: '1.1k', href: 'https://github.com/cakeslice/Outline-Effect', category: 'Effect-Highlighter' },
+    // Effect-Ocean
+    { name: 'crest-oceanrender', author: 'huwb', description: 'Một hệ thống đại dương tiên tiến được triển khai trong Unity3D.', stars: '2.5k', href: 'https://github.com/huwb/crest-oceanrender', category: 'Effect-Ocean' },
+    // Effect-Toon
+    { name: 'ToonShading', author: 'Kink3d', description: 'Một bộ sưu tập các shader "Toon" cho Unity dựa trên xấp xỉ PBR theo bước.', stars: '741', href: 'https://github.com/Kink3d/ToonShading', category: 'Effect-Toon' },
+    // Embedding
+    { name: 'react-native-unity-view', author: 'f111fei', description: 'Hiển thị một view Unity trong React Native.', stars: '1.4k', href: 'https://github.com/f111fei/react-native-unity-view', category: 'Embedding' },
+    // Feedback Libraries
+    { name: 'Juce-Feedbacks', author: 'Juce-Assets', description: 'Thư viện phản hồi mã nguồn mở là một phần của framework công cụ Juce Unity.', stars: '674', href: 'https://github.com/Juce-Assets/Juce-Feedbacks', category: 'Feedback Libraries' },
     // Framework
     { name: 'Fungus', author: 'snozbot', description: 'Một framework miễn phí và mã nguồn mở để tạo các game kể chuyện tương tác trong Unity 3D.', stars: '2.5k', href: 'https://github.com/snozbot/fungus', category: 'Framework' },
     { name: 'QFramework', author: 'liangxiegame', description: 'Framework K.I.S.S (Keep it simple, stupid) đầu tiên của bạn cho Unity 3D.', stars: '4.1k', href: 'https://github.com/liangxiegame/QFramework', category: 'Framework' },
@@ -124,6 +136,8 @@ const allRepos = [
     // Lua
     { name: 'slua', author: 'pangweiwei', description: 'Binding lua nhanh nhất thông qua việc tạo mã tĩnh cho Unity3D và mono.', stars: '3.5k', href: 'https://github.com/pangweiwei/slua', category: 'Lua' },
     { name: 'xLua', author: 'Tencent', description: 'xLua là một plugin giải pháp hot-fix cho Unity3D, hỗ trợ android, ios, windows, osx, v.v.', stars: '8.8k', href: 'https://github.com/Tencent/xLua', category: 'Lua' },
+    // Lua Utilities
+    { name: 'LuaProfiler-For-Unity', author: 'ElPsyCongree', description: 'Trình phân tích hiệu năng Lua cho Unity.', stars: '500', href: 'https://github.com/ElPsyCongree/LuaProfiler-For-Unity', category: 'Lua Utilities' },
     // Machine Learning
     { name: 'MediaPipeUnityPlugin', author: 'homuler', description: 'Plugin Unity để chạy MediaPipe.', stars: '2.2k', href: 'https://github.com/homuler/MediaPipeUnityPlugin', category: 'Machine Learning' },
     // Media Player
@@ -163,7 +177,7 @@ const allRepos = [
     { name: 'Replicator', author: 'ettmetal', description: 'Hệ thống pooling/tái sử dụng GameObject cho Unity.', stars: '155', href: 'https://github.com/ettmetal/Replicator', category: 'Pooling System' },
     { name: 'Eflatun.Pooling', author: 'starikcetin', description: 'Các tiện ích object pooling cho Unity.', stars: '109', href: 'https://github.com/starikcetin/Eflatun.Pooling', category: 'Pooling System' },
     // Protobuf
-    { name: 'protobuf-net', author: 'mgravell', description: 'Thư viện Protocol Buffers cho .NET.', stars: '4.4k', href: 'https://github.com/mgravell/protobuf-net', category: 'Protobuf' },
+    { name: 'protobuf-net', author: 'protobuf-net', description: 'Thư viện Protocol Buffers cho .NET.', stars: '4.4k', href: 'https://github.com/protobuf-net/protobuf-net', category: 'Protobuf' },
     { name: 'protobuf-unity', author: '5argon', description: 'Tự động biên dịch tệp .proto thành C# trong dự án Unity khi bạn chỉnh sửa chúng.', stars: '529', href: 'https://github.com/5argon/protobuf-unity', category: 'Protobuf' },
     // Project Management
     { name: 'unity-desktop-lite', author: 'gblikas', description: 'Unity trong trình duyệt, thông qua Github Codespaces.', stars: '143', href: 'https://github.com/gblikas/unity-desktop-lite', category: 'Project Management' },
@@ -222,20 +236,33 @@ const allRepos = [
     { name: 'unity-ugui-XCharts', author: 'monitor1394', description: 'Một thư viện biểu đồ và trực quan hóa dữ liệu cho Unity.', stars: '3k', href: 'https://github.com/monitor1394/unity-ugui-XCharts', category: 'UI' },
     { name: 'dear-imgui-unity', author: 'realgamessoftware', description: 'Gói Unity cho Dear ImGui.', stars: '450', href: 'https://github.com/realgamessoftware/dear-imgui-unity', category: 'UI' },
     { name: 'ReactUnity', author: 'ReactUnity', description: 'Framework React và HTML cho Unity UI & UIToolkit.', stars: '1.7k', href: 'https://github.com/ReactUnity/core', category: 'UI' },
-    { name: 'uPalette', author: 'Haruma-K', description: 'Hệ thống quản lý tập trung & thay đổi hàng loạt màu sắc cho Unity.', stars: '600', href: 'https://github.com/Haruma-K/uPalette', category: 'UI' }
+    { name: 'uPalette', author: 'Haruma-K', description: 'Hệ thống quản lý tập trung & thay đổi hàng loạt màu sắc cho Unity.', stars: '600', href: 'https://github.com/Haruma-K/uPalette', category: 'UI' },
+    // Utilities
+    { name: 'LINQ to GameObject', author: 'neuecc', description: 'Duyệt qua hệ thống phân cấp GameObject bằng LINQ.', stars: '2.2k', href: 'https://github.com/neuecc/LINQ-to-GameObject-for-Unity', category: 'Utilities' },
+    { name: 'Moments', author: 'Chman', description: 'Một công cụ ghi lại và phát lại GIF nhanh chóng cho Unity.', stars: '1.4k', href: 'https://github.com/Chman/Moments', category: 'Utilities' },
+    { name: 'FrameCapture', author: 'Chman', description: 'Công cụ chụp ảnh từng khung hình đơn giản cho Unity để ghi lại các đoạn replay hoặc cinematic siêu mượt.', stars: '580', href: 'https://github.com/Chman/FrameCapture', category: 'Utilities' },
+    { name: 'UniRx', author: 'neuecc', description: 'Reactive Extensions cho Unity.', stars: '6.1k', href: 'https://github.com/neuecc/UniRx', category: 'Utilities' },
+    { name: 'graphy', author: 'Tayx94', description: 'Graphy là trình theo dõi và gỡ lỗi tối ưu, dễ sử dụng, nhiều tính năng cho dự án Unity của bạn.', stars: '3.7k', href: 'https://github.com/Tayx94/graphy', category: 'Utilities' },
+    // VR/XR
+    { name: 'VRTK', author: 'thestonefox', description: 'Một bộ công cụ VR hiệu quả để xây dựng nhanh các giải pháp VR trong Unity3d.', stars: '3.9k', href: 'https://github.com/thestonefox/VRTK', category: 'VR/XR' },
+    { name: 'NewtonVR', author: 'TomorrowTodayLabs', description: 'Một hệ thống tương tác thực tế ảo cho Unity dựa trên vật lý.', stars: '1.2k', href: 'https://github.com/TomorrowTodayLabs/NewtonVR', category: 'VR/XR' },
+    { name: 'MixedRealityToolkit-Unity', author: 'Microsoft', description: 'MixedRealityToolkit-Unity sử dụng mã từ kho MixedRealityToolkit cơ sở và giúp việc sử dụng trong Unity dễ dàng hơn.', stars: '5.2k', href: 'https://github.com/Microsoft/MixedRealityToolkit-Unity', category: 'VR/XR' },
+    { name: 'Google VR SDK for Unity', author: 'googlevr', description: 'SDK Google VR cho Unity.', stars: '4k', href: 'https://github.com/googlevr/gvr-unity-sdk', category: 'VR/XR' },
+    { name: 'ultimatexr-unity', author: 'VRMADA', description: 'UltimateXR là một framework mã nguồn mở, miễn phí giúp tạo các ứng dụng VR.', stars: '716', href: 'https://github.com/VRMADA/ultimatexr-unity', category: 'VR/XR' }
   ];
   
 const categories = [
   'All', '2D', '2D Bones / IK', '3D Bones / IK', 'AI', 'Analyzer', 'Animation',
   'Anti-Cheat', 'Art Tools', 'Asset Bundle', 'Audio', 'Build Tools', 'Camera',
   'Character Controller', 'Controller Mappings', 'Console', 'DOTS', 'Dependency Injection',
-  'Document Reader', 'ECS Framework', 'Editor', 'Effect and Shaders', 'Framework', 'Gameplay',
+  'Document Reader', 'ECS Framework', 'Editor', 'Effect and Shaders', 'Effect-Highlighter', 'Effect-Ocean', 'Effect-Toon',
+  'Embedding', 'Feedback Libraries', 'Framework', 'Gameplay',
   'Gizmos', 'Input', 'Job System', 'Level Editor', 'Light', 'Lua', 'Lua Utilities',
   'Machine Learning', 'Media Player', 'Meshes', 'Modding', 'Monetization', 'Networking', 'Node Graph',
   'Obfuscation', 'Package Manager', 'Physic', 'Playable', 'Plugins', 'Procedural Generation',
   'Pooling System', 'Protobuf', 'Project Management', 'Runtime Editor', 'Scriptable Object',
   'Scriptings', 'Scene Transition', 'Serializer', 'Services', 'Sounds', 'Threading', 'Terrain', 'Timeline',
-  'Tweening', 'Vehicle', 'UI'
+  'Tweening', 'Vehicle', 'UI', 'Utilities', 'VR/XR'
 ];
 
 
