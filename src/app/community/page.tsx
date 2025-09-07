@@ -28,7 +28,6 @@ import {
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu';
 import { SidebarProvider } from '@/components/ui/sidebar';
-import { cn } from '@/lib/utils';
 
 const allRepos = [
     // 2D
@@ -326,5 +325,3 @@ export default function CommunityPage() {
     </SidebarProvider>
   );
 }
-
-    
