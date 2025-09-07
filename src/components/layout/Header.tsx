@@ -10,7 +10,7 @@ import Link from 'next/link';
 
 export default function Header() {
   // This is a placeholder for authentication state
-  const isLoggedIn = false;
+  const isLoggedIn = true;
   const { toggleSidebar } = useSidebar();
 
   return (
