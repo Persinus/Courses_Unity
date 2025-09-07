@@ -76,6 +76,64 @@ const allRepos = [
   { name: 'Ultimate-2D-Controller', author: 'Matthew-J-Spencer', description: 'Một điểm khởi đầu tuyệt vời cho bộ điều khiển 2D của bạn.', stars: '1.4k', href: 'https://github.com/Matthew-J-Spencer/Ultimate-2D-Controller', category: 'Character Controller' },
   { name: 'SuperCharacterController', author: 'IronWarrior', description: 'Character Controller tùy chỉnh cho Unity.', stars: '1.7k', href: 'https://github.com/IronWarrior/SuperCharacterController', category: 'Character Controller' },
   // ... and so on for all other repos
+  // Controller Mappings
+  { name: 'Dualshock 3 (PS3)', author: 'UnityCommunity', description: 'Sơ đồ nút cho tay cầm Dualshock 3.', stars: 'N/A', href: 'https://forum.unity.com/threads/ps3-button-map.89288/', category: 'Controller Mappings' },
+  { name: 'Dualshock 4 (PS4)', author: 'E.Tellier', description: 'Sơ đồ nút cho tay cầm Dualshock 4.', stars: 'N/A', href: 'https://twitter.com/erik_tellier/status/1071457079854944256', category: 'Controller Mappings' },
+  // DOTS
+  { name: 'unity-ecs-navmesh', author: 'zulfajuniadi', description: 'Một demo triển khai Unity Entity Component System với NavMesh.', stars: '243', href: 'https://github.com/zulfajuniadi/unity-ecs-navmesh', category: 'DOTS' },
+  { name: 'ECS-Tween', author: 'Xerios', description: 'Hệ thống tweening đơn giản cho Unity sử dụng ECS, hoạt động với cả GameObjects.', stars: '200', href: 'https://github.com/Xerios/ECS-Tween', category: 'DOTS' },
+  // Dependency Injection
+  { name: 'Zenject', author: 'modesttree', description: 'Framework Dependency Injection cho Unity3D.', stars: '9.2k', href: 'https://github.com/modesttree/Zenject', category: 'Dependency Injection' },
+  { name: 'VContainer', author: 'hadashiA', description: 'Thư viện DI siêu nhanh, mã nguồn tối thiểu, không GC cho Unity (IL2CPP).', stars: '1.8k', href: 'https://github.com/hadashiA/VContainer', category: 'Dependency Injection' },
+  // Document Reader
+  { name: 'GoogleSheetsUnity', author: '5argon', description: 'Lấy dữ liệu từ Google Sheets riêng tư của bạn vào Unity (chỉ đọc).', stars: '665', href: 'https://github.com/5argon/GoogleSheetsUnity', category: 'Document Reader' },
+  // ECS Framework
+  { name: 'Entitas-CSharp', author: 'sschmid', description: 'Entitas là một framework Entity Component System (ECS) siêu nhanh dành riêng cho C# và Unity.', stars: '6.1k', href: 'https://github.com/sschmid/Entitas-CSharp', category: 'ECS Framework' },
+  { name: 'LeoECS', author: 'Leopotam', description: 'LeoECS là một framework Entity Component System (ECS) nhanh được cung cấp bởi C# với tích hợp tùy chọn cho Unity.', stars: '1.2k', href: 'https://github.com/Leopotam/ecs', category: 'ECS Framework' },
+  // Editor
+  { name: 'Unity-QuickSheet', author: 'kimsama', description: 'Unity-QuickSheet cho phép bạn sử dụng dữ liệu từ file bảng tính trong Unity editor.', stars: '879', href: 'https://github.com/kimsama/Unity-QuickSheet', category: 'Editor' },
+  { name: 'Reorderable Inspector', author: 'ChemiKhazi', description: 'Tự động tạo danh sách có thể sắp xếp lại cho các component của Unity.', stars: '1.1k', href: 'https://github.com/ChemiKhazi/ReorderableInspector', category: 'Editor' },
+  // Effect and Shaders
+  { name: 'KinoGlitch', author: 'keijiro', description: 'Các hiệu ứng glitch video cho Unity.', stars: '1.5k', href: 'https://github.com/keijiro/KinoGlitch', category: 'Effect and Shaders' },
+  { name: 'ShaderForge', author: 'FreyaHolmer', description: 'Công cụ tạo shader bằng giao diện trực quan.', stars: '5.9k', href: 'https://github.com/FreyaHolmer/ShaderForge', category: 'Effect and Shaders' },
+  // Framework
+  { name: 'Fungus', author: 'snozbot', description: 'Một framework miễn phí và mã nguồn mở để tạo các game kể chuyện tương tác trong Unity 3D.', stars: '2.5k', href: 'https://github.com/snozbot/fungus', category: 'Framework' },
+  { name: 'QFramework', author: 'liangxiegame', description: 'Framework K.I.S.S (Keep it simple, stupid) đầu tiên của bạn cho Unity 3D.', stars: '4.1k', href: 'https://github.com/liangxiegame/QFramework', category: 'Framework' },
+  // Gameplay
+  { name: 'UnityGameplayAbilitySystem', author: 'sjai013', description: 'Một framework thống nhất để triển khai các hệ thống kỹ năng trong Unity.', stars: '1.3k', href: 'https://github.com/sjai013/UnityGameplayAbilitySystem', category: 'Gameplay' },
+  { name: 'Inventory-Pro', author: 'devdogio', description: 'Hệ thống Inventory bán chạy nhất cho Unity - nay đã miễn phí và mã nguồn mở.', stars: '1.4k', href: 'https://github.com/devdogio/Inventory-Pro', category: 'Gameplay' },
+  // Gizmos
+  { name: 'UGizmo', author: 'harumas', description: 'Công cụ vẽ gizmo hiệu suất cao cho Unity.', stars: '264', href: 'https://github.com/harumas/UGizmo', category: 'Gizmos' },
+  // Input
+  { name: 'InControl', author: 'pbhogan', description: 'Một trình quản lý input cho Unity giúp thuần hóa con quái vật tay cầm đa nền tảng.', stars: '3.1k', href: 'https://github.com/pbhogan/InControl', category: 'Input' },
+  { name: 'TouchScript', author: 'TouchScript', description: 'Giải pháp multitouch hoàn chỉnh cho Unity: Win8, TUIO, Mobile.', stars: '2k', href: 'https://github.com/TouchScript/TouchScript', category: 'Input' },
+  // Job System
+  { name: 'ZeroAllocJobScheduler', author: 'genaray', description: 'Một bộ lập lịch công việc C# hiệu suất cao không cần cấp phát bộ nhớ.', stars: '136', href: 'https://github.com/genaray/ZeroAllocJobScheduler', category: 'Job System' },
+  // Level Editor
+  { name: 'Tiled2Unity', author: 'Seanba', description: 'Xuất các tệp Tiled Map Editor (TMX) vào Unity.', stars: '2.4k', href: 'https://github.com/Seanba/Tiled2Unity', category: 'Level Editor' },
+  { name: 'realtime-CSG-for-unity', author: 'LogicalError', description: 'Realtime-CSG, trình chỉnh sửa cấp độ CSG cho Unity.', stars: '2.1k', href: 'https://github.com/LogicalError/realtime-CSG-for-unity', category: 'Level Editor' },
+  // Light
+  { name: 'Aura', author: 'raphael-ernaelsten', description: 'Ánh sáng thể tích (Volumetric Lighting) cho Unity.', stars: '2.3k', href: 'https://github.com/raphael-ernaelsten/Aura', category: 'Light' },
+  // Lua
+  { name: 'slua', author: 'pangweiwei', description: 'Binding lua nhanh nhất thông qua việc tạo mã tĩnh cho Unity3D và mono.', stars: '3.5k', href: 'https://github.com/pangweiwei/slua', category: 'Lua' },
+  { name: 'xLua', author: 'Tencent', description: 'xLua là một plugin giải pháp hot-fix cho Unity3D, hỗ trợ android, ios, windows, osx, v.v.', stars: '8.8k', href: 'https://github.com/Tencent/xLua', category: 'Lua' },
+  // Machine Learning
+  { name: 'MediaPipeUnityPlugin', author: 'homuler', description: 'Plugin Unity để chạy MediaPipe.', stars: '2.2k', href: 'https://github.com/homuler/MediaPipeUnityPlugin', category: 'Machine Learning' },
+  // Media Player
+  { name: 'LibVLCSharp', author: 'videolan', description: 'LibVLCSharp là một API âm thanh và video đa nền tảng cho các nền tảng .NET dựa trên Thư viện LibVLC của VideoLAN.', stars: '1.4k', href: 'https://github.com/videolan/LibVLCSharp', category: 'Media Player' },
+  // Meshes
+  { name: 'UnityMeshSimplifier', author: 'Whinarn', description: 'Đơn giản hóa lưới (mesh simplification) cho Unity.', stars: '1.4k', href: 'https://github.com/Whinarn/UnityMeshSimplifier', category: 'Meshes' },
+  { name: 'SplineMesh', author: 'benoit-dumas', description: 'Một plugin Unity để tạo nội dung cong trong thời gian thực bằng các đường cong bézier.', stars: '1.8k', href: 'https://github.com/benoit-dumas/SplineMesh', category: 'Meshes' },
+  // Modding
+  { name: 'dotPeek', author: 'JetBrains', description: 'Trình dịch ngược .NET và trình duyệt Assembly miễn phí.', stars: 'N/A', href: 'https://www.jetbrains.com/decompiler/', category: 'Modding' },
+  { name: 'Harmony', author: 'pardeike', description: 'Một thư viện để vá, thay thế và trang trí các phương thức .NET và Mono trong thời gian chạy.', stars: '4.4k', href: 'https://github.com/pardeike/Harmony', category: 'Modding' },
+  // Monetization
+  { name: 'Google Mobile Ads Unity Plugin', author: 'googleads', description: 'Plugin Unity chính thức cho SDK Google Mobile Ads.', stars: '1.3k', href: 'https://github.com/googleads/googleads-mobile-unity', category: 'Monetization' },
+  // Networking
+  { name: 'Nakama', author: 'heroiclabs', description: 'Một máy chủ xã hội và thời gian thực phân tán mã nguồn mở cho game và ứng dụng.', stars: '8.2k', href: 'https://github.com/heroiclabs/nakama', category: 'Networking' },
+  { name: 'LiteNetLib', author: 'RevenantX', description: 'Thư viện UDP đáng tin cậy nhẹ cho Mono và .NET.', stars: '3.9k', href: 'https://github.com/RevenantX/LiteNetLib', category: 'Networking' },
+  // Node Graph
+  { name: 'xNode', author: 'Siccity', description: 'Cho phép bạn xem và chỉnh sửa các biểu đồ nút (node graphs) bên trong Unity.', stars: '3.7k', href: 'https://github.com/Siccity/xNode', category: 'Node Graph' }
 ];
 
 const categories = [
