@@ -2,7 +2,7 @@
 "use client";
 
 import { useState, useEffect } from 'react';
-import { Github, ListFilter, Star, GitFork, AlertCircle, Calendar, Shield, Loader2 } from 'lucide-react';
+import { Github, ListFilter, Star, GitFork, AlertCircle, Calendar, Shield, Loader2, ChevronLeft, ChevronRight } from 'lucide-react';
 import Link from 'next/link';
 import Image from 'next/image';
 
@@ -293,7 +293,7 @@ const allRepos: Repo[] = [
     { name: 'Kenney', author: 'Kenney', description: 'Tài sản 2D, 3D và âm thanh miễn phí cho mục đích cá nhân và thương mại.', stars: 'N/A', href: 'https://kenney.nl/assets', category: 'Collections / Forums / Shops' },
     { name: 'Open Game Art', author: 'OpenGameArt', description: 'Nghệ thuật game mã nguồn mở.', stars: 'N/A', href: 'https://opengameart.org/', category: 'Collections / Forums / Shops' },
     { name: 'Unity Asset Store', author: 'Unity', description: 'Cửa hàng tài sản chính thức cho Unity.', stars: 'N/A', href: 'https://assetstore.unity.com/', category: 'Collections / Forums / Shops' },
-    { name: 'Unitylist', author: 'Unitylist', description: 'Tìm kiếm mọi thứ về Unity.', stars: 'N/A', href: 'https://unitylist.com/', category: 'Collections / Forums / Shops' },
+    { name: 'Unitylist', author: 'Unitylist', description: 'Tìm kiếm mọi thứ về Unity.', stars: 'N\A', href: 'https://unitylist.com/', category: 'Collections / Forums / Shops' },
     // Creation Tools
     { name: 'Aseprite', author: 'aseprite', description: 'Trình chỉnh sửa sprite động & công cụ pixel art.', stars: 'N/A', href: 'https://www.aseprite.org/', category: 'Creation Tools' },
     { name: 'AssetForge', author: 'Kenney', description: 'Dễ dàng tạo các tài sản đơn giản trong vài giây (Trả phí).', stars: 'N/A', href: 'https://kenney.itch.io/assetforge', category: 'Creation Tools' },
@@ -334,6 +334,7 @@ type RepoDataCache = {
 };
 
 const CACHE_DURATION = 1000 * 60 * 60; // 1 hour
+const REPOS_PER_PAGE = 12;
 
 export default function CommunityPage() {
   const [activeFilter, setActiveFilter] = useState('All');
@@ -341,11 +342,28 @@ export default function CommunityPage() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isLoadingDetails, setIsLoadingDetails] = useState(false);
   const [repoDetailsCache, setRepoDetailsCache] = useState<RepoDataCache>({});
+  const [currentPage, setCurrentPage] = useState(1);
 
   const filteredRepos = activeFilter === 'All'
     ? allRepos
     : allRepos.filter(repo => repo.category === activeFilter);
     
+  useEffect(() => {
+    setCurrentPage(1);
+  }, [activeFilter]);
+  
+  const totalPages = Math.ceil(filteredRepos.length / REPOS_PER_PAGE);
+  const paginatedRepos = filteredRepos.slice(
+      (currentPage - 1) * REPOS_PER_PAGE,
+      currentPage * REPOS_PER_PAGE
+  );
+
+  const handlePageChange = (newPage: number) => {
+    if (newPage > 0 && newPage <= totalPages) {
+        setCurrentPage(newPage);
+    }
+  };
+
   const handleCardClick = async (repo: Repo) => {
       setSelectedRepo(repo);
       setIsModalOpen(true);
@@ -418,7 +436,7 @@ export default function CommunityPage() {
             </div>
 
             <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
-              {filteredRepos.map((repo, index) => (
+              {paginatedRepos.map((repo, index) => (
                 <Card 
                   key={`${repo.name}-${index}`}
                   className="flex flex-col hover:shadow-lg transition-shadow duration-300 cursor-pointer"
@@ -456,6 +474,32 @@ export default function CommunityPage() {
                 </Card>
               ))}
             </div>
+
+            {totalPages > 1 && (
+                <div className="mt-8 flex items-center justify-center gap-4">
+                    <Button
+                        variant="outline"
+                        size="sm"
+                        onClick={() => handlePageChange(currentPage - 1)}
+                        disabled={currentPage === 1}
+                    >
+                        <ChevronLeft className="h-4 w-4" />
+                        Trang trước
+                    </Button>
+                    <span className="text-sm font-medium">
+                        Trang {currentPage} trên {totalPages}
+                    </span>
+                    <Button
+                        variant="outline"
+                        size="sm"
+                        onClick={() => handlePageChange(currentPage + 1)}
+                        disabled={currentPage === totalPages}
+                    >
+                        Trang sau
+                        <ChevronRight className="h-4 w-4" />
+                    </Button>
+                </div>
+            )}
           </main>
         </div>
       </div>
@@ -464,7 +508,7 @@ export default function CommunityPage() {
         <DialogContent className="sm:max-w-[625px]">
            <DialogHeader>
               <DialogTitle className="text-2xl">{selectedRepo?.name ?? 'Loading...'}</DialogTitle>
-              {selectedRepo?.author && (
+              {selectedRepo?.author && !isLoadingDetails && (
                 <DialogDescription>
                   Bởi <span className="font-semibold text-primary">{selectedRepo.author}</span>
                 </DialogDescription>
@@ -526,5 +570,3 @@ export default function CommunityPage() {
     </SidebarProvider>
   );
 }
-
-    
